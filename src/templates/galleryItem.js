@@ -1,11 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-export default function Template({
-  data, // this prop will be injected by the GraphQL query below.
-}) {
-  const { markdownRemark } = data; // data.markdownRemark holds our post data
-  const { frontmatter, html } = markdownRemark;
+export default function GalleryItemTemplate({ data }) {
+  console.log(data);
+  const { markdownRemark: item } = data;
+  const { frontmatter, html } = item;
+
   return (
     <div className="blog-post-container">
       <div className="blog-post">
@@ -20,14 +20,16 @@ export default function Template({
   );
 }
 
+
 export const pageQuery = graphql`
-  query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query GalleryItemByID($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      id
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
-        path
         title
+        description
       }
     }
   }
