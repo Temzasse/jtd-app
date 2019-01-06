@@ -1,6 +1,6 @@
 ---
-path: test
+path: first-post
 date: 2019-01-06T19:04:56.311Z
-title: First
+title: First post
 ---
-Testing
+Testing first post!
