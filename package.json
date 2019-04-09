@@ -1,10 +1,11 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "jtd-app",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "Interior design static web page made with Gatsby and Netlify CMS",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
+    "install:clean": "rm -rf node_modules && npm install",
     "develop": "gatsby develop",
     "start": "npm run develop",
     "build": "gatsby build",
@@ -12,19 +13,19 @@
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "dependencies": {
-    "gatsby": "^2.0.76",
-    "gatsby-plugin-netlify-cms": "^3.0.9",
-    "gatsby-source-filesystem": "^2.0.12",
-    "gatsby-transformer-remark": "^2.1.19",
-    "netlify-cms": "^2.3.2",
-    "react": "^16.5.1",
-    "react-dom": "^16.5.1"
+    "gatsby": "^2.3.16",
+    "gatsby-plugin-netlify-cms": "^3.0.17",
+    "gatsby-source-filesystem": "^2.0.29",
+    "gatsby-transformer-remark": "^2.3.8",
+    "netlify-cms": "^2.9.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+    "url": "https://github.com/Temzasse/jtd-app"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/Temzasse/jtd-app/issues"
   }
 }
