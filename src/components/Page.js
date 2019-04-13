@@ -1,14 +1,22 @@
 import React from 'react';
+import styled from '@emotion/styled';
 
 import Navbar from '../components/Navbar';
 import Drawer from '../components/Drawer';
+import Footer from '../components/Footer';
 
 const Page = ({ children }) => (
-  <div style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}>
+  <Wrapper>
     {children}
+    <Footer />
     <Navbar />
     <Drawer />
-  </div>
+  </Wrapper>
 );
+
+const Wrapper = styled.div`
+  width: 100%;
+  min-height: 100vh;
+`;
 
 export default Page;

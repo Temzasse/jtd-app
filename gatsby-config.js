@@ -1,5 +1,14 @@
+const path = require('path');
+
 module.exports = {
   plugins: [
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: path.join(__dirname, 'src', 'images'),
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -7,8 +16,10 @@ module.exports = {
         name: 'pages',
       },
     },
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     'gatsby-transformer-remark',
-    'gatsby-plugin-netlify-cms',
     'gatsby-plugin-emotion',
+    'gatsby-plugin-netlify-cms', // Keep this last
   ],
 };
