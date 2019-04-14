@@ -1,22 +1,7 @@
 const path = require('path');
 
-// https://blog.rousek.name/2018/08/10/cool-image-loading-with-gatsbyjs-v2-and-netlify-cms-v2/
-const netlifyCmsPaths = {
-  resolve: 'gatsby-plugin-netlify-cms-paths',
-  options: {
-    cmsConfig: '/static/admin/config.yml',
-  },
-};
-
 module.exports = {
   plugins: [
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: path.join(__dirname, 'src', 'images'),
-        name: 'images',
-      },
-    },
     // Define also the location for images produced by netlify-cms
     {
       resolve: 'gatsby-source-filesystem',
@@ -28,11 +13,17 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/src/pages`,
+        path: path.join(__dirname, 'src', 'images'),
+        name: 'images',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: path.join(__dirname, 'src', 'pages'),
         name: 'pages',
       },
     },
-    netlifyCmsPaths,
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
@@ -41,7 +32,7 @@ module.exports = {
         plugins: [
           // Including in your Remark plugins will transform
           // any paths in your markdown body
-          netlifyCmsPaths,
+          'gatsby-remark-relative-images',
           {
             resolve: 'gatsby-remark-images',
             options: {
@@ -49,8 +40,6 @@ module.exports = {
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
               maxWidth: 1000,
-              // Required to display blurred image first
-              backgroundColor: 'transparent',
             },
           },
         ],

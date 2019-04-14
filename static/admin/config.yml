@@ -30,11 +30,11 @@ collections:
         name: 'description'
         widget: 'text'
         required: true
-      - label: 'Kuvat'
-        name: 'images'
+      - label: 'Kansikuva'
+        name: 'previewImage'
         widget: 'image'
-        allow_multiple: true
         required: true
-        media_library:
-          config:
-            multiple: true
+      - label: 'Galleriakuvat'
+        name: 'galleryImages'
+        widget: 'list'
+        field: { label: 'Kuva', name: 'image', widget: 'image' }

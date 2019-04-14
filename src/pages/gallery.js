@@ -7,6 +7,7 @@ import Header from '../components/Header';
 
 const Gallery = ({ data }) => {
   const galleryItems = getArrData(data);
+  console.log({ galleryItems });
 
   return (
     <Page>
