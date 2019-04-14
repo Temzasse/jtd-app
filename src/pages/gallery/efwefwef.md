@@ -1,10 +1,11 @@
 ---
 templateKey: galleryItem
-title: efwefwef
+title: Magea talo
 date: 2019-04-14T20:21:54.224Z
-description: wefewfwe
+description: Sika siisti!
 previewImage: /assets/oneiro_banner.png
 galleryImages:
   - /assets/karlsberg.png
+  - /assets/oneiro_banner.png
 ---
 
