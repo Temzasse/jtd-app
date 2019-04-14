@@ -20,6 +20,7 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-transformer-remark',
     'gatsby-plugin-emotion',
+    'gatsby-plugin-remove-console',
     'gatsby-plugin-netlify-cms', // Keep this last
   ],
 };
