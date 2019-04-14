@@ -12,6 +12,8 @@ collections:
     folder: 'src/pages/gallery'
     create: true
     slug: '{{slug}}' # based on title
+    editor:
+      preview: false
     fields:
       - label: 'Template Key'
         name: 'templateKey'
