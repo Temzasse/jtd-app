@@ -7,6 +7,5 @@ previewImage: /assets/oneiro_banner.png
 galleryImages:
   - /assets/karlsberg.png
   - /assets/oneiro_banner.png
-  - /assets/oneiro_banner.png
 ---
 
