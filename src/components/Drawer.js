@@ -3,9 +3,9 @@ import styled from '@emotion/styled';
 import { FiMenu } from 'react-icons/fi';
 import { navigate } from 'gatsby';
 
-import { mobileOnly } from '../utils';
+import { mobileOnly, IS_BROWSER } from '../utils';
 
-const MENU_WIDTH = Math.min(360, window.innerWidth * 0.8);
+const MENU_WIDTH = IS_BROWSER ? Math.min(360, window.innerWidth * 0.8) : 360;
 const MENU_CLOSE_MS = 400;
 
 const Drawer = () => {

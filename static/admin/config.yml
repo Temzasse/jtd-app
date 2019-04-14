@@ -6,13 +6,34 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
-  - name: "gallery"
-    label: "Gallery"
-    folder: "src/pages/gallery"
+  - name: 'gallery'
+    label: 'Gallery'
+    folder: 'src/pages/gallery'
     create: true
-    slug: "{{slug}}" # based on title
+    slug: '{{slug}}' # based on title
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "galleryItem"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
+      - label: 'Template Key'
+        name: 'templateKey'
+        widget: 'hidden'
+        default: 'galleryItem'
+        required: false
+      - label: 'Otsikko'
+        name: 'title'
+        widget: 'string'
+        required: true
+      - label: 'Julkaisupäivä'
+        name: 'date'
+        widget: 'datetime'
+        required: true
+      - label: 'Kuvaus'
+        name: 'description'
+        widget: 'text'
+        required: true
+      - label: 'Kuvat'
+        name: 'images'
+        widget: 'image'
+        allow_multiple: true
+        required: true
+        media_library:
+          config:
+            multiple: true

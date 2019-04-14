@@ -55,6 +55,7 @@ const Title = styled.h1`
 const Wrapper = styled.div`
   width: 100%;
   position: relative;
+  margin-bottom: 10px;
 `;
 
 const Svg = styled.svg`
