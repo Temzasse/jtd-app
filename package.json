@@ -8,6 +8,8 @@
     "install:clean": "rm -rf node_modules && npm install",
     "develop": "gatsby develop",
     "start": "npm run develop",
+    "fix:netlify:config": "sed -i '' -e \"s|branch: dev|branch: $BRANCH|g\" static/admin/config_test.yml",
+    "prebuild": "npm run fix:netlify:config",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""

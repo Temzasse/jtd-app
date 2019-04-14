@@ -1,6 +1,7 @@
 backend:
   name: github
   repo: Temzasse/jtd-app
+  branch: dev
 
 media_folder: static/assets
 public_folder: assets
