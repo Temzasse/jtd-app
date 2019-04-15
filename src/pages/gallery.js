@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import Page from '../components/Page';
 import { getArrData } from '../utils';
 import Header from '../components/Header';
+import SEO from '../components/SEO';
 
 const Gallery = ({ data }) => {
   const galleryItems = getArrData(data);
@@ -11,6 +12,8 @@ const Gallery = ({ data }) => {
 
   return (
     <Page>
+      <SEO />
+
       <Header img={data.headerImg.childImageSharp.fluid} title="Galleria" />
 
       {galleryItems.map(({ title, description, id }) => (
@@ -35,7 +38,7 @@ export const query = graphql`
 
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 1000
+      limit: 100
     ) {
       edges {
         node {
@@ -43,6 +46,20 @@ export const query = graphql`
           frontmatter {
             title
             description
+            previewImage {
+              childImageSharp {
+                fluid(maxWidth: 1000) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            galleryImages {
+              childImageSharp {
+                fluid(maxWidth: 1000) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }

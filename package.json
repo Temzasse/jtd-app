@@ -22,6 +22,7 @@
     "gatsby-image": "^2.0.38",
     "gatsby-plugin-emotion": "^4.0.6",
     "gatsby-plugin-netlify-cms": "^3.0.17",
+    "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-remove-console": "0.0.2",
     "gatsby-plugin-sharp": "^2.0.34",
     "gatsby-remark-images": "^3.0.10",
@@ -30,8 +31,10 @@
     "gatsby-transformer-remark": "^2.3.8",
     "gatsby-transformer-sharp": "^2.1.18",
     "netlify-cms": "^2.9.1",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.0",
     "react-icons": "^3.5.0"
   },
   "repository": {

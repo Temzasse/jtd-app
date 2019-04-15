@@ -1,6 +1,14 @@
 const path = require('path');
 
+// TODO:
+// - https://www.npmjs.com/package/netlify-cms-backend-fs
+// - https://arcath.net/2019/01/netlify-cms-on-the-filesystem-with-gatsby
+
 module.exports = {
+  siteMetadata: {
+    title: 'Sisustussuunnittelja Johanna Syvälahti-Taskula',
+    description: 'Teen sisustussuunnittelua koteihin pääasiassa pääkäupunkiseudulla tavoitteena löytää toimivat ja kauniit ratkaisut, jotka miellyttävät sinua.',
+  },
   plugins: [
     // Define also the location for images produced by netlify-cms
     {
@@ -46,6 +54,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-emotion',
+    'gatsby-plugin-react-helmet',
     'gatsby-plugin-remove-console',
     'gatsby-plugin-netlify-cms', // Keep this last
   ],
