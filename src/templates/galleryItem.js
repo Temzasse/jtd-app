@@ -1,33 +1,32 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
+import Page from '../components/Page';
+import SEO from '../components/SEO';
+import { getData } from '../utils';
+
 export default function GalleryItemTemplate({ data }) {
   console.log(data);
-  const { markdownRemark: item } = data;
-  const { frontmatter, html } = item;
+  const galleryItem = getData(data);
+  console.log(galleryItem);
 
   return (
-    <div className="blog-post-container">
-      <div className="blog-post">
-        <h1>{frontmatter.title}</h1>
-        <h2>{frontmatter.date}</h2>
-        <div
-          className="blog-post-content"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+    <Page>
+      <SEO />
+
+      <div>
+        <h1>{galleryItem.title}</h1>
+        <h2>{galleryItem.date}</h2>
       </div>
-    </div>
+    </Page>
   );
 }
-
 
 export const pageQuery = graphql`
   query GalleryItemByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
-      html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
         title
         description
       }

@@ -1,5 +1,6 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
+import Image from 'gatsby-image';
 
 import Page from '../components/Page';
 import { getArrData } from '../utils';
@@ -16,11 +17,12 @@ const Gallery = ({ data }) => {
 
       <Header img={data.headerImg.childImageSharp.fluid} title="Galleria" />
 
-      {galleryItems.map(({ title, description, id }) => (
-        <div key={id}>
+      {galleryItems.map(({ id, slug, title, description, previewImage }) => (
+        <Link key={id} to={slug}>
+          <Image fixed={previewImage.childImageSharp.fixed} />
           <h2>{title}</h2>
           <p>{description}</p>
-        </div>
+        </Link>
       ))}
     </Page>
   );
@@ -44,13 +46,16 @@ export const query = graphql`
       edges {
         node {
           id
+          fields {
+            slug
+          }
           frontmatter {
             title
             description
             previewImage {
               childImageSharp {
-                fluid(maxWidth: 1000) {
-                  ...GatsbyImageSharpFluid
+                fixed(width: 500) {
+                  ...GatsbyImageSharpFixed
                 }
               }
             }

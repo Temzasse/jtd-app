@@ -59,7 +59,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   // Add slug field
   if (node.internal.type === 'MarkdownRemark') {
-    const value = createFilePath({ node, getNode });
+    const path = createFilePath({ node, getNode });
+    const value = path.replace('gallery', 'galleria');
     createNodeField({ name: 'slug', node, value });
   }
 
