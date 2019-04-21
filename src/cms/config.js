@@ -74,4 +74,10 @@ const config = {
   ],
 };
 
+// NOTE! by having the editorial workflow we won't trigger countless extra
+// deploys to prod when new content is added (eg. uploading many images)
+if (!IS_DEV) {
+  config.publish_mode = 'editorial_workflow';
+}
+
 export default config;
