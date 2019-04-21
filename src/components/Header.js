@@ -27,7 +27,7 @@ const Header = ({ img, title }) => {
   );
 };
 
-const TitleWrapper = styled.h1`
+const TitleWrapper = styled.div`
   position: absolute;
   top: 0;
   left: 0;

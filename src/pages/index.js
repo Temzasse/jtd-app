@@ -1,4 +1,10 @@
-import React from "react"
+import React from 'react';
 import Page from '../components/Page';
+import SEO from '../components/SEO';
 
-export default () => <Page>Home page</Page>
+export default () => (
+  <Page>
+    <SEO />
+    Home page
+  </Page>
+);

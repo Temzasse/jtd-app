@@ -4,16 +4,17 @@ export const getArrData = data => {
   console.log('> Arr data:', data);
   return data.allMarkdownRemark.edges.map(({ node }) => ({
     id: node.id,
+    ...node.fields,
     ...node.frontmatter,
   }));
 };
 
 export const getData = data => {
   console.log('> Data:', data);
-  const { frontmatter, html, id } = data.markdownRemark;
+  const { id, fields = {}, frontmatter = {} } = data.markdownRemark;
   return {
     id,
-    content: html,
+    ...fields,
     ...frontmatter,
   };
 };
