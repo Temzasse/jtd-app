@@ -15,7 +15,7 @@ const config = {
       },
 
   media_folder: IS_DEV ? 'static/assets/dev' : 'static/assets/prod',
-  public_folder: IS_DEV ? 'assets/dev' : 'assets/prod',
+  public_folder: IS_DEV ? '/assets/dev' : '/assets/prod',
 
   collections: [
     {
