@@ -2,12 +2,20 @@ const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 const { fmImagesToRelative } = require('gatsby-remark-relative-images');
 
+exports.onCreateDevServer = ({ app }) => {
+  // - https://github.com/ADARTA/gatsby-starter-netlify-cms
+  // - https://arcath.net/2019/01/netlify-cms-on-the-filesystem-with-gatsby
+  const fsMiddlewareAPI = require('netlify-cms-backend-fs/dist/fs');
+  fsMiddlewareAPI(app);
+};
+
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
 
   return graphql(`
     {
       allMarkdownRemark(
+        filter: { frontmatter: { templateKey: { eq: "galleryItem" } } }
         sort: { order: DESC, fields: [frontmatter___date] }
         limit: 1000
       ) {

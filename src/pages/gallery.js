@@ -37,6 +37,7 @@ export const query = graphql`
     }
 
     allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "galleryItem" } } }
       sort: { order: DESC, fields: [frontmatter___date] }
       limit: 100
     ) {

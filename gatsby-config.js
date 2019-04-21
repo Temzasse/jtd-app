@@ -1,20 +1,27 @@
 const path = require('path');
 
-// TODO:
-// - https://www.npmjs.com/package/netlify-cms-backend-fs
-// - https://arcath.net/2019/01/netlify-cms-on-the-filesystem-with-gatsby
+const IS_DEV = process.env.NODE_ENV === 'development';
+
+const NETLIFY_CMS_ASSETS_DIR = IS_DEV
+  ? path.join(__dirname, 'static', 'assets', 'dev')
+  : path.join(__dirname, 'static', 'assets', 'prod');
+
+const MD_DATA_DIR = IS_DEV
+  ? path.join(__dirname, 'src', 'data', 'dev')
+  : path.join(__dirname, 'src', 'data', 'prod');
 
 module.exports = {
   siteMetadata: {
     title: 'Sisustussuunnittelja Johanna Syvälahti-Taskula',
-    description: 'Teen sisustussuunnittelua koteihin pääasiassa pääkäupunkiseudulla tavoitteena löytää toimivat ja kauniit ratkaisut, jotka miellyttävät sinua.',
+    description:
+      'Teen sisustussuunnittelua koteihin pääasiassa pääkäupunkiseudulla tavoitteena löytää toimivat ja kauniit ratkaisut, jotka miellyttävät sinua.',
   },
   plugins: [
-    // Define also the location for images produced by netlify-cms
+    // Define the location for images produced by netlify-cms
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: path.join(__dirname, 'static', 'assets'),
+        path: NETLIFY_CMS_ASSETS_DIR,
         name: 'assets',
       },
     },
@@ -28,7 +35,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: path.join(__dirname, 'src', 'pages'),
+        path: MD_DATA_DIR,
         name: 'pages',
       },
     },
@@ -56,6 +63,13 @@ module.exports = {
     'gatsby-plugin-emotion',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-remove-console',
-    'gatsby-plugin-netlify-cms', // Keep this last
+    {
+      // Keep this as last plugin !!!
+      resolve: 'gatsby-plugin-netlify-cms',
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+        manualInit: true,
+      },
+    },
   ],
 };
