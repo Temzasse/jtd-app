@@ -1,9 +1,12 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { FiMenu } from 'react-icons/fi';
+import { IoIosImages, IoIosHelpCircle, IoMdRose } from 'react-icons/io';
 import { navigate } from 'gatsby';
 
+import logoImg from '../images/logo_black.png';
 import { mobileOnly, IS_BROWSER } from '../utils';
+import Gutter from './Gutter';
 
 const MENU_WIDTH = IS_BROWSER ? Math.min(360, window.innerWidth * 0.8) : 360;
 const MENU_CLOSE_MS = 400;
@@ -25,14 +28,34 @@ const Drawer = () => {
       <Backdrop isVisible={isOpen} onClick={() => setOpen(false)} />
 
       <Menu isOpen={isOpen}>
-        <MenuItem onClick={() => navigateDelayed('/')}>Etusivu</MenuItem>
+        <MenuItem onClick={() => navigateDelayed('/')}>
+          <Logo src={logoImg} />
+          <Gutter />
+          Etusivu
+        </MenuItem>
+
         <MenuItem onClick={() => navigateDelayed('/palvelut')}>
+          <IoMdRose size={30} />
+          <Gutter />
           Palvelut
         </MenuItem>
+
+        <SubMenuItem onClick={() => navigateDelayed('/palvelut/yksityisille')}>
+          Yksityisille
+        </SubMenuItem>
+        <SubMenuItem onClick={() => navigateDelayed('/palvelut/yrityksille')}>
+          Yrityksille
+        </SubMenuItem>
+
         <MenuItem onClick={() => navigateDelayed('/galleria')}>
+          <IoIosImages size={30} />
+          <Gutter />
           Galleria
         </MenuItem>
+
         <MenuItem onClick={() => navigateDelayed('/ota-yhteytta')}>
+          <IoIosHelpCircle size={30} />
+          <Gutter />
           Ota yhteyttä
         </MenuItem>
       </Menu>
@@ -73,7 +96,19 @@ const Menu = styled.div`
 
 const MenuItem = styled.div`
   padding: 16px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+
+  &:active {
+    background-color: #ddd;
+  }
+`;
+
+const SubMenuItem = styled.div`
+  padding: 16px 16px 16px 24px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #eee;
 
   &:active {
     background-color: #ddd;
@@ -101,6 +136,11 @@ const MenuButton = styled.button`
   }
 
   ${mobileOnly};
+`;
+
+const Logo = styled.img`
+  height: 24px;
+  width: auto;
 `;
 
 export default Drawer;
