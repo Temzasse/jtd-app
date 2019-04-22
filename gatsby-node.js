@@ -1,6 +1,5 @@
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
-const { fmImagesToRelative } = require('gatsby-remark-relative-images');
 
 exports.onCreateDevServer = ({ app }) => {
   // - https://github.com/ADARTA/gatsby-starter-netlify-cms
@@ -63,8 +62,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     const value = path.replace('gallery', 'galleria');
     createNodeField({ name: 'slug', node, value });
   }
-
-  fmImagesToRelative(node);
 };
 
 const replacePath = path => {

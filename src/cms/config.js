@@ -1,21 +1,31 @@
 // Config for Netlify CMS
 
 const IS_DEV = process.env.NODE_ENV === 'development';
+const CLOUDINARY_NAME = process.env.CLOUDINARY_NAME;
+const CLOUDINARY_API_KEY = process.env.CLOUDINARY_API_KEY;
 
-const config = {
-  backend: IS_DEV
-    ? {
-        name: 'file-system',
-        api_root: 'http://localhost:8000/api',
-      }
-    : {
-        name: 'github',
-        repo: 'Temzasse/jtd-app',
-        branch: 'master',
-      },
+const devBackend = {
+  name: 'file-system',
+  api_root: 'http://localhost:8000/api',
+};
 
-  media_folder: IS_DEV ? 'static/assets/dev' : 'static/assets/prod',
-  public_folder: IS_DEV ? '/assets/dev' : '/assets/prod',
+const prodBackend = {
+  name: 'github',
+  repo: 'Temzasse/jtd-app',
+  branch: 'master',
+};
+
+let config = {
+  backend: IS_DEV ? devBackend : prodBackend,
+
+  media_library: {
+    name: 'cloudinary',
+    use_transformations: false,
+    config: {
+      cloud_name: CLOUDINARY_NAME,
+      api_key: CLOUDINARY_API_KEY,
+    },
+  },
 
   collections: [
     {
@@ -73,11 +83,5 @@ const config = {
     },
   ],
 };
-
-// NOTE! by having the editorial workflow we won't trigger countless extra
-// deploys to prod when new content is added (eg. uploading many images)
-if (!IS_DEV) {
-  config.publish_mode = 'editorial_workflow';
-}
 
 export default config;

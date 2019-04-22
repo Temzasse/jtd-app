@@ -1,11 +1,11 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import Image from 'gatsby-image';
 
-import Page from '../components/Page';
 import { getArrData } from '../utils';
-import Header from '../components/Header';
 import SEO from '../components/SEO';
+import Img from '../components/Img';
+import Page from '../components/Page';
+import Header from '../components/Header';
 
 const Gallery = ({ data }) => {
   const galleryItems = getArrData(data);
@@ -19,7 +19,7 @@ const Gallery = ({ data }) => {
 
       {galleryItems.map(({ id, slug, title, description, previewImage }) => (
         <Link key={id} to={slug}>
-          <Image fixed={previewImage.childImageSharp.fixed} />
+          <Img src={previewImage} />
           <h2>{title}</h2>
           <p>{description}</p>
         </Link>
@@ -52,20 +52,8 @@ export const query = graphql`
           frontmatter {
             title
             description
-            previewImage {
-              childImageSharp {
-                fixed(width: 500) {
-                  ...GatsbyImageSharpFixed
-                }
-              }
-            }
-            galleryImages {
-              childImageSharp {
-                fluid(maxWidth: 1000) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+            previewImage
+            galleryImages
           }
         }
       }
