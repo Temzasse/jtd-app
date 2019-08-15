@@ -10,7 +10,7 @@ const devBackend = {
 };
 
 const prodBackend = {
-  name: 'github',
+  name: 'git-gateway',
   repo: 'Temzasse/jtd-app',
   branch: 'master',
 };
