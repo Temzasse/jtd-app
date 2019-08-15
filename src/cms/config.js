@@ -1,8 +1,6 @@
 // Config for Netlify CMS
 
 const IS_DEV = process.env.NODE_ENV === 'development';
-const CLOUDINARY_NAME = process.env.CLOUDINARY_NAME;
-const CLOUDINARY_API_KEY = process.env.CLOUDINARY_API_KEY;
 
 const devBackend = {
   name: 'file-system',
@@ -18,14 +16,8 @@ const prodBackend = {
 let config = {
   backend: IS_DEV ? devBackend : prodBackend,
 
-  media_library: {
-    name: 'cloudinary',
-    use_transformations: false,
-    config: {
-      cloud_name: CLOUDINARY_NAME,
-      api_key: CLOUDINARY_API_KEY,
-    },
-  },
+  media_folder: IS_DEV ? 'static/assets/dev' : 'static/assets/prod',
+  public_folder: IS_DEV ? '/assets/dev' : '/assets/prod',
 
   collections: [
     {

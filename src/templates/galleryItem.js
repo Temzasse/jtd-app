@@ -2,31 +2,22 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
-import { Transformation } from 'cloudinary-react';
+import Image from 'gatsby-image';
 
-import { media } from '../utils';
+import { media, getData } from '../utils';
 import Page from '../components/Page';
 import SEO from '../components/SEO';
-import Img from '../components/Img';
-import { getData } from '../utils';
 
 export default function GalleryItemTemplate({ data }) {
   const galleryItem = getData(data);
-  console.log(galleryItem);
+  console.log('> galleryItem', galleryItem);
 
   return (
     <Page>
       <SEO />
 
       <Header>
-        <Img
-          src={galleryItem.previewImage}
-          css={css`
-            width: 100%;
-            object-fit: cover;
-            height: 80vh;
-          `}
-        />
+        <Image fluid={galleryItem.previewImage.childImageSharp.fluid} />
 
         <Svg viewBox="0 0 580 150">
           <g>
@@ -50,9 +41,9 @@ export default function GalleryItemTemplate({ data }) {
           <p>{galleryItem.description}</p>
 
           <GalleryImages>
-            {galleryItem.galleryImages.map(src => (
-              <GalleryImage key={src}>
-                <Img src={src} />
+            {galleryItem.galleryImages.map(img => (
+              <GalleryImage key={img.childImageSharp.fluid.src}>
+                <Image fluid={img.childImageSharp.fluid} />
               </GalleryImage>
             ))}
           </GalleryImages>
@@ -141,8 +132,20 @@ export const pageQuery = graphql`
       frontmatter {
         title
         description
-        previewImage
-        galleryImages
+        previewImage {
+          childImageSharp {
+            fluid(maxWidth: 1000) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        galleryImages {
+          childImageSharp {
+            fluid(maxWidth: 1000) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

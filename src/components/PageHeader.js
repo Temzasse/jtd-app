@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Img from 'gatsby-image';
+import Image from 'gatsby-image';
 
 import { media } from '../utils';
 
 const Header = ({ img, title }) => {
   return (
     <Wrapper>
-      <Img fluid={img} />
+      <Image fluid={img} />
 
       <Svg viewBox="0 0 580 150">
         <g>
