@@ -5,7 +5,7 @@ import { getArrData } from '../utils';
 import SEO from '../components/SEO';
 import Img from '../components/Img';
 import Page from '../components/Page';
-import Header from '../components/Header';
+import PageHeader from '../components/PageHeader';
 
 const Gallery = ({ data }) => {
   const galleryItems = getArrData(data);
@@ -15,7 +15,7 @@ const Gallery = ({ data }) => {
     <Page>
       <SEO />
 
-      <Header img={data.headerImg.childImageSharp.fluid} title="Galleria" />
+      <PageHeader img={data.headerImg.childImageSharp.fluid} title="Galleria" />
 
       {galleryItems.map(({ id, slug, title, description, previewImage }) => (
         <Link key={id} to={slug}>

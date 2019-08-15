@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import Img from 'gatsby-image';
+
 import { media } from '../utils';
 
 const Header = ({ img, title }) => {

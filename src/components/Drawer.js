@@ -1,8 +1,8 @@
 import React from 'react';
+import { navigate } from 'gatsby';
 import styled from '@emotion/styled';
 import { FiMenu } from 'react-icons/fi';
 import { IoIosImages, IoIosHelpCircle, IoMdRose } from 'react-icons/io';
-import { navigate } from 'gatsby';
 
 import logoImg from '../images/logo_black.png';
 import { mobileOnly, IS_BROWSER } from '../utils';

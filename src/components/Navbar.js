@@ -20,6 +20,7 @@ const Navbar = () => {
       <NavLink to="/" activeStyle={activeStyle}>
         <Logo src={logoImg} />
       </NavLink>
+
       <NavLink
         to="/palvelut"
         partiallyActive
@@ -41,9 +42,11 @@ const Navbar = () => {
           </Dropmenu>
         )}
       </NavLink>
+
       <NavLink to="/galleria" activeStyle={activeStyle}>
         Galleria
       </NavLink>
+
       <NavLink to="/ota-yhteytta" activeStyle={activeStyle}>
         Ota yhteyttä
       </NavLink>
