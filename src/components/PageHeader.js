@@ -4,10 +4,10 @@ import Image from 'gatsby-image';
 
 import { media } from '../utils';
 
-const Header = ({ img, title }) => {
+const PageHeader = ({ img, title }) => {
   return (
     <Wrapper>
-      <Image fluid={img} />
+      <HeaderImage fluid={img} />
 
       <Svg viewBox="0 0 580 150">
         <g>
@@ -28,6 +28,12 @@ const Header = ({ img, title }) => {
   );
 };
 
+const Wrapper = styled.div`
+  width: 100%;
+  position: relative;
+  margin-bottom: 10px;
+`;
+
 const TitleWrapper = styled.div`
   position: absolute;
   top: 0;
@@ -42,21 +48,14 @@ const TitleWrapper = styled.div`
 
 const Title = styled.h1`
   margin: 0;
-  font-size: 80px;
+  font-size: 60px;
   font-weight: 900;
-  text-shadow: 0px 2px 32px rgba(255, 255, 255, 0.8);
   color: ${props => props.theme.black};
   transform: translateY(-32px);
 
   ${media.sm`
     font-size: 48px;
   `}
-`;
-
-const Wrapper = styled.div`
-  width: 100%;
-  position: relative;
-  margin-bottom: 10px;
 `;
 
 const Svg = styled.svg`
@@ -66,4 +65,8 @@ const Svg = styled.svg`
   right: 0;
 `;
 
-export default Header;
+const HeaderImage = styled(Image)`
+  height: 100vh;
+`;
+
+export default PageHeader;
