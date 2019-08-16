@@ -9,13 +9,28 @@ import { media, getData } from '../utils';
 import Page from '../components/Page';
 import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
+import Lightbox from '../components/Lightbox';
 
 export default function GalleryItemTemplate({ data }) {
+  const [lightboxOpen, setLightboxOpen] = React.useState(false);
+  const [lightboxImage, setLightboxImage] = React.useState(null);
+
   const galleryItem = getData(data);
-  const images = galleryItem.galleryImages.map(
-    image => image.childImageSharp.fluid
-  );
+  const images = galleryItem.galleryImages.map((image, index) => ({
+    ...image.childImageSharp.fluid,
+    index,
+  }));
   const rows = chunk(images, 3);
+
+  function openLightbox(imageIndex) {
+    setLightboxImage(imageIndex);
+    setLightboxOpen(true);
+  }
+
+  function closeLightbox() {
+    setLightboxImage(null);
+    setLightboxOpen(false);
+  }
 
   return (
     <Page>
@@ -37,16 +52,28 @@ export default function GalleryItemTemplate({ data }) {
               );
 
               return row.map(image => (
-                <GalleryImage
+                <GalleryImageWrapper
                   key={image.src}
-                  width={`${(image.aspectRatio / rowAspectRatioSum) * 100}%`}
-                  fluid={image}
-                />
+                  onClick={() => openLightbox(image.index)}
+                >
+                  <GalleryImage
+                    width={`${(image.aspectRatio / rowAspectRatioSum) * 100}%`}
+                    fluid={image}
+                  />
+                </GalleryImageWrapper>
               ));
             })}
           </GalleryImages>
         </Content>
       </ContentContainer>
+
+      {lightboxOpen && (
+        <Lightbox
+          images={images}
+          selectedIndex={lightboxImage}
+          close={closeLightbox}
+        />
+      )}
     </Page>
   );
 }
@@ -62,14 +89,22 @@ const Content = styled.div`
 
 const GalleryImages = styled.div``;
 
-const GalleryImage = styled(Image)`
-  display: inline-block;
-  width: ${props => props.width};
-  height: auto;
+const GalleryImageWrapper = styled.div`
+  display: inline;
 
   :hover {
     filter: brightness(90%);
   }
+
+  ${media.sm`
+    pointer-events: none;
+  `}
+`;
+
+const GalleryImage = styled(Image)`
+  display: inline-block;
+  width: ${props => props.width};
+  height: auto;
 
   & img {
     padding: 4px;
