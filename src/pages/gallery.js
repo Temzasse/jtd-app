@@ -23,7 +23,7 @@ const Gallery = ({ data }) => {
           {galleryItems.map(({ id, slug, title, previewImage }) => (
             <GalleryLink key={id} to={slug}>
               <GalleryPreview fluid={previewImage.childImageSharp.fluid} />
-              <h2>{title}</h2>
+              <GalleryItemTitle>{title}</GalleryItemTitle>
             </GalleryLink>
           ))}
         </GalleryItems>
@@ -35,6 +35,10 @@ const Gallery = ({ data }) => {
 const GalleryWrapper = styled.div`
   max-width: 1200px;
   margin: 0 auto;
+
+  ${media.lg`
+    margin-top: -60px;
+  `}
 `;
 
 const GalleryItems = styled.div`
@@ -63,9 +67,18 @@ const GalleryPreview = styled(Image)`
   height: 300px;
   border-radius: 8px;
 
+  :hover {
+    filter: brightness(90%);
+  }
+
   ${media.sm`
     height: 300px;
   `}
+`;
+
+const GalleryItemTitle = styled.h2`
+  font-weight: 400;
+  font-size: 24px;
 `;
 
 export const query = graphql`

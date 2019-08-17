@@ -51,7 +51,7 @@ const Title = styled.h1`
   font-size: 60px;
   font-weight: 900;
   color: ${props => props.theme.black};
-  transform: translateY(-32px);
+  transform: translateY(-60px);
   text-align: center;
 
   ${media.sm`
