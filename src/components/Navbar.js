@@ -10,9 +10,8 @@ const Navbar = () => {
   const [dropmenuOpen, setDropmenuOpen] = React.useState(false);
 
   const activeStyle = {
-    fontWeight: 900,
-    color: theme.primary[900],
-    borderColor: theme.primary[900],
+    fontWeight: 700,
+    borderColor: theme.primary[600],
   };
 
   return (
@@ -55,14 +54,16 @@ const Navbar = () => {
 };
 
 const Nav = styled.nav`
+  font-family: 'Cinzel', serif;
   display: flex;
   flex-direction: row;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background-color: ${props => props.theme.primary[500]};
+  background-color: rgba(255, 255, 255, 0.8);
   z-index: 1;
+  backdrop-filter: blur(5px);
   ${desktopOnly}
 `;
 
@@ -73,12 +74,12 @@ const NavLink = styled(Link)`
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  color: ${props => props.theme.primary[900]};
-  border-bottom: 4px solid ${props => props.theme.primary[500]};
+  color: ${props => props.theme.black};
+  border-bottom: 4px solid transparent;
   position: relative;
 
   &:hover {
-    border-bottom: 4px solid ${props => props.theme.primary[700]};
+    border-color: ${props => props.theme.primary[400]};
   }
 `;
 
@@ -125,13 +126,14 @@ const DropmenuItem = styled(Link)`
   color: ${props => props.theme.primary[900]};
   font-weight: 400;
   border: none;
+  text-align: center;
 
   &:hover {
-    background-color: #eee;
+    background-color: ${props => props.theme.primary[100]};
   }
 
   &:active {
-    background-color: #ddd;
+    background-color: ${props => props.theme.primary[200]};
   }
 `;
 
