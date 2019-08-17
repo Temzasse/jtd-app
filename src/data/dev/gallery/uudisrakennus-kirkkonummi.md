@@ -7,7 +7,7 @@ description: >-
   entrepreneur iteration ramen. Business plan non-disclosure agreement
   business-to-consumer stealth. Buyer conversion low hanging fruit holy grail.
   Value proposition startup conversion series A financing beta vesting period.
-previewImage: /assets/dev/Uudisrakennus_Kirkkonummi_1.jpg
+previewImage: /assets/dev/Uudisrakennus_Kirkkonummi_8.jpg
 galleryImages:
   - /assets/dev/Uudisrakennus_Kirkkonummi_1.jpg
   - /assets/dev/Uudisrakennus_Kirkkonummi_2.jpg

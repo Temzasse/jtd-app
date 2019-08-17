@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import Image from 'gatsby-image';
 import { keyframes } from '@emotion/core';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 const Lightbox = ({ images, selectedIndex, close }) => {
   const [index, setIndex] = React.useState(selectedIndex);
@@ -39,9 +40,18 @@ const Lightbox = ({ images, selectedIndex, close }) => {
   return (
     <Wrapper>
       <Backdrop onClick={close} />
+
+      <Control onClick={prev}>
+        <FiChevronLeft size={40} color="#fff" />
+      </Control>
+
       <ImageWrapper>
         <LightboxImage fluid={image} aspectRatio={image.aspectRatio} />
       </ImageWrapper>
+
+      <Control onClick={next}>
+        <FiChevronRight size={40} color="#fff" />
+      </Control>
     </Wrapper>
   );
 };
@@ -110,6 +120,22 @@ const LightboxImage = styled(Image)`
 
   & img {
     border-radius: 12px;
+  }
+`;
+
+const Control = styled.div`
+  height: 100%;
+  flex: none;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  z-index: 1;
+  opacity: 0.2;
+
+  :hover {
+    opacity: 0.9;
   }
 `;
 
