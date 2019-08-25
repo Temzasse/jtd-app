@@ -4,21 +4,23 @@ import { Link } from 'gatsby';
 
 import logoImg from '../images/logo_black.png';
 import { desktopOnly } from '../utils';
-import theme from '../theme';
 
 const Navbar = () => {
   const [dropmenuOpen, setDropmenuOpen] = React.useState(false);
 
   const activeStyle = {
     fontWeight: 700,
-    borderColor: theme.primary[600],
   };
 
   return (
     <Nav>
       <NavLink to="/" activeStyle={activeStyle}>
-        <Logo src={logoImg} />
+        <LogoWrapper>
+          <Logo src={logoImg} />
+        </LogoWrapper>
       </NavLink>
+
+      <div style={{ flex: 1 }} />
 
       <NavLink
         to="/palvelut"
@@ -46,7 +48,7 @@ const Navbar = () => {
         Galleria
       </NavLink>
 
-      <NavLink to="/ota-yhteytta" activeStyle={activeStyle}>
+      <NavLink to="/#ota-yhteytta" activeStyle={activeStyle}>
         Ota yhteyttä
       </NavLink>
     </Nav>
@@ -54,38 +56,54 @@ const Navbar = () => {
 };
 
 const Nav = styled.nav`
-  font-family: 'Cinzel', serif;
   display: flex;
   flex-direction: row;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background-color: rgba(255, 255, 255, 0.8);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
   z-index: 1;
-  backdrop-filter: blur(5px);
   ${desktopOnly}
 `;
 
+const LogoWrapper = styled.div`
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: ${props => props.theme.white};
+`;
+
 const NavLink = styled(Link)`
-  flex: 1;
+  flex: none;
+  margin: 0px 24px;
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  color: ${props => props.theme.black};
-  border-bottom: 4px solid transparent;
+  color: ${props => props.theme.white};
   position: relative;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1.5px;
 
   &:hover {
-    border-color: ${props => props.theme.primary[400]};
+    font-weight: 700;
   }
 `;
 
 const Logo = styled.img`
-  height: 24px;
-  width: auto;
+  width: 24px;
+  height: auto;
 `;
 
 const ARROW_HEIGHT = 8;
@@ -93,14 +111,16 @@ const ARROW_HEIGHT = 8;
 const Dropmenu = styled.div`
   position: absolute;
   top: 50px;
-  left: 0px;
+  left: 50%;
   right: 0px;
   padding-top: ${ARROW_HEIGHT}px;
+  width: 200px;
+  transform: translateX(-50%);
 `;
 
 const DropmenuContent = styled.div`
   background-color: #fff;
-  border-radius: 8px;
+  border-radius: 4px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2), 0px -4px 24px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   display: flex;
@@ -129,11 +149,7 @@ const DropmenuItem = styled(Link)`
   text-align: center;
 
   &:hover {
-    background-color: ${props => props.theme.primary[100]};
-  }
-
-  &:active {
-    background-color: ${props => props.theme.primary[200]};
+    font-weight: 700;
   }
 `;
 
