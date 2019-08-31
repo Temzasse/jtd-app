@@ -40,10 +40,10 @@ const Drawer = () => {
           Palvelut
         </MenuItem>
 
-        <SubMenuItem onClick={() => navigateDelayed('/palvelut/yksityisille')}>
+        <SubMenuItem onClick={() => navigateDelayed('/palvelut#yksityisille')}>
           Yksityisille
         </SubMenuItem>
-        <SubMenuItem onClick={() => navigateDelayed('/palvelut/yrityksille')}>
+        <SubMenuItem onClick={() => navigateDelayed('/palvelut#yrityksille')}>
           Yrityksille
         </SubMenuItem>
 
@@ -53,7 +53,7 @@ const Drawer = () => {
           Galleria
         </MenuItem>
 
-        <MenuItem onClick={() => navigateDelayed('/ota-yhteytta')}>
+        <MenuItem onClick={() => navigateDelayed('/#ota-yhteytta')}>
           <IoIosHelpCircle size={30} />
           <Gutter />
           Ota yhteyttä

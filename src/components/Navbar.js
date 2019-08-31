@@ -33,10 +33,10 @@ const Navbar = () => {
         {dropmenuOpen && (
           <Dropmenu>
             <DropmenuContent>
-              <DropmenuItem to="/palvelut/yksityisille">
+              <DropmenuItem to="/palvelut#yksityisille">
                 Yksityisille
               </DropmenuItem>
-              <DropmenuItem to="/palvelut/yrityksille">
+              <DropmenuItem to="/palvelut#yrityksille">
                 Yrityksille
               </DropmenuItem>
             </DropmenuContent>
