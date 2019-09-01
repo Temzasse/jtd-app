@@ -25,7 +25,7 @@ const Content = styled.div`
   flex-direction: column;
 
   ${media.sm`
-    padding: 32px 16px;
+    padding: 32px 24px;
   `}
 `;
 

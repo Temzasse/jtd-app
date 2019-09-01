@@ -130,6 +130,11 @@ const HeaderWrapper = styled.div`
 const Logo = styled.img`
   width: 200px;
   height: 200px;
+
+  ${media.sm`
+    width: 120px;
+    height: 120px;
+  `}
 `;
 
 const MainHeading = styled.h1`
@@ -139,6 +144,11 @@ const MainHeading = styled.h1`
   margin: 0;
   background-color: #fff;
   padding: 8px 24px;
+  text-align: center;
+
+  ${media.sm`
+    font-size: 32px;
+  `}
 `;
 
 const SecondaryHeading = styled.h2`
@@ -149,6 +159,10 @@ const SecondaryHeading = styled.h2`
   text-transform: uppercase;
   background-color: #fff;
   padding: 4px 16px;
+
+  ${media.sm`
+    font-size: 18px;
+  `}
 `;
 
 const SectionHeading = styled.h3`
@@ -162,6 +176,7 @@ const Profile = styled(Image)`
   width: 250px;
   height: auto;
   margin-bottom: -120px;
+  text-align: center;
 `;
 
 const IntoText = styled.p`

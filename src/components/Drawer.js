@@ -121,7 +121,7 @@ const MenuButton = styled.button`
   left: 16px;
   border: none;
   padding: 0;
-  background-color: #eee;
+  background-color: #fff;
   border-radius: 50%;
   height: 40px;
   width: 40px;
@@ -130,6 +130,7 @@ const MenuButton = styled.button`
   align-items: center;
   outline: none;
   transition: background-color 0.2s ease;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 
   &:active {
     background-color: #ddd;

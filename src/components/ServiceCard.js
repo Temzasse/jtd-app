@@ -60,6 +60,10 @@ const CardContent = styled.div`
     rgba(255, 255, 255, 0.5) 50%,
     rgba(255, 255, 255, 0) 100%
   );
+
+  ${media.sm`
+    padding: 24px;
+  `}
 `;
 
 const CardType = styled.div`
