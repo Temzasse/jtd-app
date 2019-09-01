@@ -2,7 +2,8 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import logoImg from '../images/logo_white_black_bg.png';
-import { media } from '../utils';
+import { dotGrid } from '../utils';
+import theme from '../theme';
 import Layout from './Layout';
 import Text from './Text';
 import Gutter from './Gutter';
@@ -12,9 +13,9 @@ const Footer = () => {
   return (
     <Wrapper>
       <FooterContent>
-        <Heading as="h2" color="#fff" align="center" id="ota-yhteytta">
+        <FooterHeading id="ota-yhteytta">
           Ota yhteyttä
-        </Heading>
+        </FooterHeading>
 
         <Gutter dir="vertical" amount={60} />
 
@@ -67,6 +68,17 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  ${dotGrid(theme.grey[900])}
+`;
+
+const FooterHeading = styled.h4`
+  font-size: 40px;
+  font-weight: 900;
+  font-family: 'Raleway', sans-serif;
+  color: ${props => props.theme.primary[300]};
+  text-align: center;
+  margin: 0;
+  letter-spacing: 1.5px;
 `;
 
 const FooterContent = styled.div`

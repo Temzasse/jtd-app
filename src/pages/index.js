@@ -265,7 +265,7 @@ const GalleryLink = styled(Link)`
 
 const GalleryPreview = styled(Image)`
   height: 300px;
-  border-radius: 8px;
+  border-radius: 4px;
 
   :hover {
     filter: brightness(90%);

@@ -236,9 +236,7 @@ const Services = ({ data }) => (
   </Page>
 );
 
-const InfoSection = styled(Section)`
-  ${dotGrid(theme.primary[300])}
-`;
+const InfoSection = styled(Section)``;
 
 export const query = graphql`
   query {

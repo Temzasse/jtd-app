@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { media } from '../utils';
 
 const Section = ({ children, h, bg, padd, ...rest }) => (
   <Wrapper h={h} bg={bg} {...rest}>
@@ -22,6 +23,10 @@ const Content = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+
+  ${media.sm`
+    padding: 32px 16px;
+  `}
 `;
 
 export default Section;

@@ -4,7 +4,7 @@ import { FiCheck, FiCoffee, FiBox, FiBriefcase } from 'react-icons/fi';
 import { TiLightbulb } from 'react-icons/ti';
 import { FaPaintRoller, FaCouch, FaBuilding } from 'react-icons/fa';
 import { MdContentCut } from 'react-icons/md';
-import { dotGrid } from '../utils';
+import { dotGrid, media } from '../utils';
 
 const typeToIcon = {
   coffee: FiCoffee,
@@ -77,6 +77,10 @@ const CardType = styled.div`
   justify-content: center;
   z-index: 1;
 
+  ${media.sm`
+    display: none;
+  `}
+
   &::before {
     content: ' ';
     position: absolute;
@@ -92,6 +96,10 @@ const CardTitle = styled.strong`
   font-size: 20px;
   color: ${props => props.theme.black};
   padding-left: 36px;
+
+  ${media.sm`
+    padding-left: 0px;
+  `}
 `;
 
 const CardList = styled.ul`
@@ -105,6 +113,10 @@ const CardListItem = styled.li`
   margin-bottom: 16px;
   font-size: 16px;
   line-height: 1.6;
+
+  ${media.sm`
+    font-size: 14px;
+  `}
 `;
 
 const CardListItemBullet = styled.li`
