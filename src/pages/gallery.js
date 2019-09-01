@@ -33,12 +33,8 @@ const Gallery = ({ data }) => {
 };
 
 const GalleryWrapper = styled.div`
-  max-width: 900px;
-  margin: 0 auto;
-
-  ${media.lg`
-    margin-top: -60px;
-  `}
+  max-width: 1200px;
+  margin: 32px auto;
 `;
 
 const GalleryItems = styled.div`
@@ -64,8 +60,9 @@ const GalleryLink = styled(Link)`
 `;
 
 const GalleryPreview = styled(Image)`
-  height: 300px;
-  border-radius: 8px;
+  height: 80vh;
+  min-height: 400px;
+  border-radius: 4px;
 
   :hover {
     filter: brightness(90%);

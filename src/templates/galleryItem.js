@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import styled from '@emotion/styled';
 import chunk from 'lodash.chunk';
 import sum from 'lodash.sum';
+import orderBy from 'lodash.orderby';
 import Image from 'gatsby-image';
 
 import { media, getData } from '../utils';
@@ -16,11 +17,14 @@ export default function GalleryItemTemplate({ data }) {
   const [lightboxImage, setLightboxImage] = React.useState(null);
 
   const galleryItem = getData(data);
-  const images = galleryItem.galleryImages.map((image, index) => ({
-    ...image.childImageSharp.fluid,
-    index,
-  }));
-  const rows = chunk(images, 3);
+  const images = orderBy(
+    galleryItem.galleryImages.map((image, index) => ({
+      ...image.childImageSharp.fluid,
+      index,
+    })),
+    'aspectRatio'
+  );
+  const rows = chunk(images, 2);
 
   function openLightbox(imageIndex) {
     setLightboxImage(imageIndex);
@@ -108,7 +112,7 @@ const GalleryImage = styled(Image)`
 
   & img {
     padding: 4px;
-    border-radius: 12px;
+    border-radius: 8px;
   }
 
   ${media.sm`

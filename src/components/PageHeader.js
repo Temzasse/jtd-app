@@ -1,16 +1,12 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import Image from 'gatsby-image';
-
 import { media } from '../utils';
-import { WaveUp } from './Wave';
 
 const PageHeader = ({ img, title, children }) => {
   return (
     <Wrapper>
       <HeaderImage fluid={img} />
-
-      <WaveUp />
 
       {title && (
         <TitleWrapper>
@@ -38,7 +34,6 @@ const TitleWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.3);
 `;
 
 const Title = styled.h1`

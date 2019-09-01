@@ -73,8 +73,8 @@ const Nav = styled.nav`
 `;
 
 const LogoWrapper = styled.div`
-  height: 40px;
-  width: 40px;
+  height: 36px;
+  width: 36px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
