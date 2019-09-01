@@ -80,7 +80,7 @@ const GalleryItemTitle = styled.h2`
 
 export const query = graphql`
   query {
-    headerImg: file(relativePath: { eq: "landing_page_header.jpg" }) {
+    headerImg: file(relativePath: { eq: "gallery_header.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1000, maxHeight: 500) {
           ...GatsbyImageSharpFluid
