@@ -41,7 +41,6 @@ const Title = styled.h1`
   font-size: 60px;
   font-weight: 900;
   color: ${props => props.theme.black};
-  transform: translateY(-60px);
   text-align: center;
   background: #ffffff;
   padding: 8px 24px;

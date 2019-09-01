@@ -103,7 +103,7 @@ export const query = graphql`
             title
             previewImage {
               childImageSharp {
-                fluid(maxWidth: 1000) {
+                fluid(maxWidth: 2000) {
                   ...GatsbyImageSharpFluid
                 }
               }

@@ -23,23 +23,16 @@ export default ({ data }) => {
       <SEO />
 
       <PageHeader img={data.headerImg.childImageSharp.fluid}>
-        <Logo src={logoImg} />
-      </PageHeader>
-
-      <Section bg="#fff" h="auto" padd={0}>
-        <Layout
-          dir="col"
-          justify="center"
-          align="center"
-          style={{ textAlign: 'center' }}
-        >
+        <HeaderWrapper>
+          <Logo src={logoImg} />
+          <Gutter dir="vertical" amount={24} />
           <SecondaryHeading>Interior design</SecondaryHeading>
           <Gutter dir="vertical" amount={8} />
           <MainHeading>Johanna Taskula</MainHeading>
-        </Layout>
+        </HeaderWrapper>
+      </PageHeader>
 
-        <Gutter dir="vertical" amount={32} />
-
+      <Section bg="#fff" h="auto" padd={0}>
         <Layout dir={{ sm: 'col' }}>
           <Layout.Box flex="1">
             <IntoText>
@@ -58,9 +51,7 @@ export default ({ data }) => {
 
       <Section bg={theme.black}>
         <SectionHeading color={theme.white}>Palvelut</SectionHeading>
-        <SubHeading color={theme.white}>
-          Ratkaisut sisustuspulmiisi
-        </SubHeading>
+        <SubHeading color={theme.white}>Ratkaisut sisustuspulmiisi</SubHeading>
 
         <Gutter dir="vertical" amount={40} />
 
@@ -124,13 +115,21 @@ export default ({ data }) => {
   );
 };
 
+const HeaderWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+`;
+
 const Logo = styled.img`
   width: 200px;
   height: 200px;
-  position: absolute;
-  bottom: 16px;
-  left: 50%;
-  transform: translateX(-50%);
 `;
 
 const MainHeading = styled.h1`
@@ -138,6 +137,8 @@ const MainHeading = styled.h1`
   font-size: 60px;
   font-weight: 900;
   margin: 0;
+  background-color: #fff;
+  padding: 8px 24px;
 `;
 
 const SecondaryHeading = styled.h2`
@@ -146,6 +147,8 @@ const SecondaryHeading = styled.h2`
   font-weight: 700;
   margin: 0;
   text-transform: uppercase;
+  background-color: #fff;
+  padding: 4px 16px;
 `;
 
 const SectionHeading = styled.h3`
@@ -327,7 +330,7 @@ export const query = graphql`
             title
             previewImage {
               childImageSharp {
-                fluid(maxWidth: 1000) {
+                fluid(maxWidth: 2000) {
                   ...GatsbyImageSharpFluid
                 }
               }

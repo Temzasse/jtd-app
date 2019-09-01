@@ -1,24 +1,16 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { globalHistory } from '@reach/router';
 
 import logoImg from '../images/logo_white_black_bg.png';
 import { media } from '../utils';
-import theme from '../theme';
 import Layout from './Layout';
 import Text from './Text';
 import Gutter from './Gutter';
 import Heading from './Heading';
-import { WaveDown } from './Wave';
 
 const Footer = () => {
-  const path = globalHistory.location.pathname;
-  const waveColor = path === '/' ? theme.primary[300] : theme.white;
-
   return (
     <Wrapper>
-      <WaveDown color={waveColor} />
-
       <FooterContent>
         <Heading as="h2" color="#fff" align="center" id="ota-yhteytta">
           Ota yhteyttä
@@ -69,22 +61,18 @@ const Footer = () => {
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
+  height: 80vh;
+  min-height: 200px;
   background-color: ${props => props.theme.black};
-  padding: 250px 0px 150px 0px;
-  margin-top: 10px;
-
-  ${media.sm`
-    padding: 120px 0px 40px 0px;
-  `}
-
-  ${media.lg`
-    padding: 300px 0px 150px 0px;
-  `}
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const FooterContent = styled.div`
-  max-width: 700px;
+  max-width: 900px;
   margin: 0 auto;
+  flex: 1;
 `;
 
 const Logo = styled.img`
