@@ -12,11 +12,11 @@ import SEO from '../components/SEO';
 import Layout from '../components/Layout';
 import Gutter from '../components/Gutter';
 import PageHeader from '../components/PageHeader';
-import Heading from '../components/Heading';
+import Section from '../components/Section';
+import SubHeading from '../components/SubHeading';
 
 export default ({ data }) => {
   const galleryItems = getArrData(data);
-  console.log('> galleryItems', galleryItems);
 
   return (
     <Page>
@@ -26,107 +26,99 @@ export default ({ data }) => {
         <Logo src={logoImg} />
       </PageHeader>
 
-      <Section bg="#fff" h="auto">
-        <SectionContent padd={0}>
-          <Layout
-            dir="col"
-            justify="center"
-            align="center"
-            style={{ textAlign: 'center' }}
-          >
-            <SecondaryHeading>Interior design</SecondaryHeading>
-            <Gutter dir="vertical" amount={8} />
-            <MainHeading>Johanna Taskula</MainHeading>
-          </Layout>
+      <Section bg="#fff" h="auto" padd={0}>
+        <Layout
+          dir="col"
+          justify="center"
+          align="center"
+          style={{ textAlign: 'center' }}
+        >
+          <SecondaryHeading>Interior design</SecondaryHeading>
+          <Gutter dir="vertical" amount={8} />
+          <MainHeading>Johanna Taskula</MainHeading>
+        </Layout>
 
-          <Gutter dir="vertical" amount={32} />
+        <Gutter dir="vertical" amount={32} />
 
-          <Layout dir={{ sm: 'col' }}>
-            <Layout.Box flex="1">
-              <IntoText>
-                Kodin pitäisi olla paikka, missä tunnet iloa ja onnea. Kodissa
-                vallitseva tunnelma heijastaa siellä asuvien ihmisten elämää ja
-                rakkautta. Persoonalliset yksityiskohdat, rakkaat esineet ja
-                mielenkiintoiset ratkaisut tekevät kodista sielukkaan ja
-                asujiensa näköisen.
-              </IntoText>
-            </Layout.Box>
-            <Layout.Box flex="none">
-              <Profile fixed={data.profileImg.childImageSharp.fixed} />
-            </Layout.Box>
-          </Layout>
-        </SectionContent>
+        <Layout dir={{ sm: 'col' }}>
+          <Layout.Box flex="1">
+            <IntoText>
+              Kodin pitäisi olla paikka, missä tunnet iloa ja onnea. Kodissa
+              vallitseva tunnelma heijastaa siellä asuvien ihmisten elämää ja
+              rakkautta. Persoonalliset yksityiskohdat, rakkaat esineet ja
+              mielenkiintoiset ratkaisut tekevät kodista sielukkaan ja asujiensa
+              näköisen.
+            </IntoText>
+          </Layout.Box>
+          <Layout.Box flex="none">
+            <Profile fixed={data.profileImg.childImageSharp.fixed} />
+          </Layout.Box>
+        </Layout>
       </Section>
 
       <Section bg={theme.black}>
-        <SectionContent>
-          <SectionHeading color={theme.white}>Palvelut</SectionHeading>
-          <SectionSubHeading color={theme.white}>
-            Ratkaisut sisustuspulmiisi
-          </SectionSubHeading>
+        <SectionHeading color={theme.white}>Palvelut</SectionHeading>
+        <SubHeading color={theme.white}>
+          Ratkaisut sisustuspulmiisi
+        </SubHeading>
 
-          <Gutter dir="vertical" amount={40} />
+        <Gutter dir="vertical" amount={40} />
 
-          <Layout dir={{ sm: 'col' }}>
-            <Layout.Box>
-              <Card>
-                <CardImage fluid={data.cardImg1.childImageSharp.fluid} />
-                <CardContent>
-                  <CardTitle>Yksityisille</CardTitle>
-                  <p>
-                    Tarjoan sisustus -ja tilasuunnittelua yksityiskoteihin,
-                    uudiskohteisiin ja vapaa-ajan asuntoihin asiakkaan toiveet
-                    huomioiden. Kotien suunnittelussa on tärkeintä, että
-                    lopputuloksena on persoonallinen, juuri sinulle suunniteltu
-                    koti. Palveluihin kuuluu sisustussuunnittelu ja
-                    konsultointi.
-                  </p>
-                </CardContent>
-                <CardFooter>
-                  <ReadMoreButton to="/palvelut#yksityisille" />
-                </CardFooter>
-              </Card>
-            </Layout.Box>
+        <Layout dir={{ sm: 'col' }}>
+          <Layout.Box>
+            <Card>
+              <CardImage fluid={data.cardImg1.childImageSharp.fluid} />
+              <CardContent>
+                <CardTitle>Yksityisille</CardTitle>
+                <p>
+                  Tarjoan sisustus -ja tilasuunnittelua yksityiskoteihin,
+                  uudiskohteisiin ja vapaa-ajan asuntoihin asiakkaan toiveet
+                  huomioiden. Kotien suunnittelussa on tärkeintä, että
+                  lopputuloksena on persoonallinen, juuri sinulle suunniteltu
+                  koti. Palveluihin kuuluu sisustussuunnittelu ja konsultointi.
+                </p>
+              </CardContent>
+              <CardFooter>
+                <ReadMoreButton to="/palvelut#yksityisille" />
+              </CardFooter>
+            </Card>
+          </Layout.Box>
 
-            <Gutter sm={{ dir: 'vertical' }} amount={32} />
+          <Gutter sm={{ dir: 'vertical' }} amount={32} />
 
-            <Layout.Box>
-              <Card>
-                <CardImage fluid={data.cardImg2.childImageSharp.fluid} />
-                <CardContent>
-                  <CardTitle>Yrityksille</CardTitle>
-                  <p>
-                    Toteutan majoitustilojen, opetustilojen ja toimitilojen tila
-                    -ja sisustussunnittelua. Erikoisosaamisenani ovat edustus
-                    -ja majoitustilat, kuten boutique-hotellit, sekä
-                    opetustilat.
-                  </p>
-                </CardContent>
-                <CardFooter>
-                  <ReadMoreButton to="/palvelut#yrityksille" />
-                </CardFooter>
-              </Card>
-            </Layout.Box>
-          </Layout>
-        </SectionContent>
+          <Layout.Box>
+            <Card>
+              <CardImage fluid={data.cardImg2.childImageSharp.fluid} />
+              <CardContent>
+                <CardTitle>Yrityksille</CardTitle>
+                <p>
+                  Toteutan majoitustilojen, opetustilojen ja toimitilojen tila
+                  -ja sisustussunnittelua. Erikoisosaamisenani ovat edustus -ja
+                  majoitustilat, kuten boutique-hotellit, sekä opetustilat.
+                </p>
+              </CardContent>
+              <CardFooter>
+                <ReadMoreButton to="/palvelut#yrityksille" />
+              </CardFooter>
+            </Card>
+          </Layout.Box>
+        </Layout>
       </Section>
 
       <Section bg={theme.primary[300]}>
-        <SectionContent>
-          <SectionHeading color={theme.black}>Galleria</SectionHeading>
-          <SectionSubHeading>Viimeisimmät julkaisut</SectionSubHeading>
+        <SectionHeading color={theme.black}>Galleria</SectionHeading>
+        <SubHeading>Viimeisimmät julkaisut</SubHeading>
 
-          <Gutter dir="vertical" amount={40} />
+        <Gutter dir="vertical" amount={40} />
 
-          <GalleryItems>
-            {galleryItems.map(({ id, slug, title, previewImage }) => (
-              <GalleryLink key={id} to={slug}>
-                <GalleryPreview fluid={previewImage.childImageSharp.fluid} />
-                <GalleryItemTitle>{title}</GalleryItemTitle>
-              </GalleryLink>
-            ))}
-          </GalleryItems>
-        </SectionContent>
+        <GalleryItems>
+          {galleryItems.map(({ id, slug, title, previewImage }) => (
+            <GalleryLink key={id} to={slug}>
+              <GalleryPreview fluid={previewImage.childImageSharp.fluid} />
+              <GalleryItemTitle>{title}</GalleryItemTitle>
+            </GalleryLink>
+          ))}
+        </GalleryItems>
       </Section>
     </Page>
   );
@@ -139,23 +131,6 @@ const Logo = styled.img`
   bottom: 16px;
   left: 50%;
   transform: translateX(-50%);
-`;
-
-const Section = styled.section`
-  width: 100%;
-  min-height: ${props => props.h || '100vh'};
-  background-color: ${props => props.bg};
-  display: flex;
-  overflow: hidden;
-`;
-
-const SectionContent = styled.div`
-  flex: 1;
-  padding: ${props => props.padd || 60}px;
-  max-width: 900px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
 `;
 
 const MainHeading = styled.h1`
@@ -178,15 +153,6 @@ const SectionHeading = styled.h3`
   font-weight: 900;
   color: ${props => props.color};
   margin: 0;
-`;
-
-const SectionSubHeading = styled.h4`
-  font-size: 16px;
-  font-weight: 500;
-  text-transform: uppercase;
-  color: ${props => props.color};
-  letter-spacing: 1.5px;
-  margin: 8px 0px;
 `;
 
 const Profile = styled(Image)`

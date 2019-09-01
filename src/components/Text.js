@@ -8,7 +8,7 @@ const Text = styled.span`
   font-size: ${props => props.size || 16}px;
   font-weight: ${props => props.weight || 400};
   color: ${props => props.color || props.theme.black};
-  line-height: ${props => props.lineh || 1.5};
+  line-height: ${props => props.lineh || 1.6};
   ${responsivify('size', 'font-size')}
 `;
 

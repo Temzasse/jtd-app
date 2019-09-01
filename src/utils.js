@@ -1,4 +1,5 @@
 import { css } from '@emotion/core';
+import theme from './theme';
 
 export const getArrData = data => {
   console.log('> Arr data:', data);
@@ -29,6 +30,11 @@ export const desktopOnly = css`
   @media screen and (max-width: 34em) {
     display: none;
   }
+`;
+
+export const dotGrid = (color = theme.primary[300]) => css`
+  background-size: 30px 30px;
+  background-image: radial-gradient(${color} 5%, transparent 0);
 `;
 
 export const IS_BROWSER = typeof window !== 'undefined';

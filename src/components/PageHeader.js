@@ -48,6 +48,8 @@ const Title = styled.h1`
   color: ${props => props.theme.black};
   transform: translateY(-60px);
   text-align: center;
+  background: #ffffff;
+  padding: 8px 24px;
 
   ${media.sm`
     font-size: 48px;

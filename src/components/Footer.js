@@ -14,12 +14,13 @@ import { WaveDown } from './Wave';
 const Footer = () => {
   const path = globalHistory.location.pathname;
   const waveColor = path === '/' ? theme.primary[300] : theme.white;
+
   return (
     <Wrapper>
       <WaveDown color={waveColor} />
 
       <FooterContent>
-        <Heading color="#fff" align="center">
+        <Heading as="h2" color="#fff" align="center" id="ota-yhteytta">
           Ota yhteyttä
         </Heading>
 
