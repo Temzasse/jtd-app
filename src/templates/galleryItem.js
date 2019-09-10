@@ -112,7 +112,7 @@ const GalleryImage = styled(Image)`
 
   & img {
     padding: 4px;
-    border-radius: 8px;
+    border-radius: 6px;
   }
 
   ${media.sm`
@@ -131,14 +131,14 @@ export const pageQuery = graphql`
         description
         previewImage {
           childImageSharp {
-            fluid(maxWidth: 1000) {
+            fluid(maxWidth: 2000) {
               ...GatsbyImageSharpFluid
             }
           }
         }
         galleryImages {
           childImageSharp {
-            fluid(maxWidth: 1000) {
+            fluid(maxWidth: 2000) {
               ...GatsbyImageSharpFluid
             }
           }

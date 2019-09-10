@@ -65,8 +65,9 @@ const Nav = styled.nav`
   background: linear-gradient(
     0deg,
     rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.2) 50%,
-    rgba(0, 0, 0, 0.6) 100%
+    rgba(0, 0, 0, 0.1) 15%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.5) 100%
   );
   z-index: 1;
   ${desktopOnly}
@@ -95,6 +96,7 @@ const NavLink = styled(Link)`
   text-transform: uppercase;
   font-size: 14px;
   letter-spacing: 1.5px;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
 
   &:hover {
     font-weight: 700;

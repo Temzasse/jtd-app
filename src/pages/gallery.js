@@ -53,6 +53,7 @@ const GalleryLink = styled(Link)`
   padding: 16px;
   color: ${props => props.theme.black};
   text-decoration: none;
+  position: relative;
 
   ${media.sm`
     width: 100%;
@@ -62,7 +63,7 @@ const GalleryLink = styled(Link)`
 const GalleryPreview = styled(Image)`
   height: 80vh;
   min-height: 400px;
-  border-radius: 4px;
+  border-radius: 2px;
 
   :hover {
     filter: brightness(90%);
@@ -74,8 +75,18 @@ const GalleryPreview = styled(Image)`
 `;
 
 const GalleryItemTitle = styled.h2`
-  font-weight: 400;
+  font-weight: 200;
   font-size: 24px;
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  padding: 8px;
+  text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
 `;
 
 export const query = graphql`

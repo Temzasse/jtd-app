@@ -2,7 +2,6 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import logoImg from '../images/logo_white_black_bg.png';
-import { dotGrid } from '../utils';
 import theme from '../theme';
 import Layout from './Layout';
 import Text from './Text';
@@ -13,25 +12,23 @@ const Footer = () => {
   return (
     <Wrapper>
       <FooterContent>
-        <FooterHeading id="ota-yhteytta">
-          Ota yhteyttä
-        </FooterHeading>
+        <FooterHeading id="ota-yhteytta">Ota yhteyttä</FooterHeading>
 
         <Gutter dir="vertical" amount={60} />
 
         <Layout dir={{ sm: 'col' }} align={{ sm: 'center' }}>
           <Layout.Box>
             <Layout dir="col" align="center">
-              <Text weight={500} size={18} color="#fff">
-                Johanna Syvälahti-Taskula
+              <Text weight={500} size={18}>
+                Johanna Taskula
               </Text>
-              <Text weight={500} size={18} color="#fff">
+              <Text weight={500} size={18}>
                 Sisustussuunnittelija
               </Text>
-              <Text weight={500} size={18} color="#fff">
+              <Text weight={500} size={18}>
                 044-2370181
               </Text>
-              <Text weight={500} size={18} color="#fff">
+              <Text weight={500} size={18}>
                 <EmailLink
                   href="mailto:info@johannataskula.fi"
                   target="_blank"
@@ -48,6 +45,7 @@ const Footer = () => {
           <Layout.Box>
             <Layout dir="col" align="center" justify="center">
               <BrandHeading>Interior Design</BrandHeading>
+              <Gutter dir="vertical" amount={8} />
               <BrandHeading2>Johanna Taskula</BrandHeading2>
               <Gutter dir="vertical" />
               <Logo src={logoImg} />
@@ -64,18 +62,16 @@ const Wrapper = styled.div`
   width: 100%;
   height: 80vh;
   min-height: 200px;
-  background-color: ${props => props.theme.black};
+  background-color: ${props => props.theme.primary[300]};
   display: flex;
   align-items: center;
   justify-content: center;
-  ${dotGrid(theme.grey[900])}
 `;
 
 const FooterHeading = styled.h4`
-  font-size: 40px;
-  font-weight: 900;
-  font-family: 'Raleway', sans-serif;
-  color: ${props => props.theme.primary[300]};
+  font-size: 48px;
+  font-weight: 200;
+  color: ${props => props.theme.black};
   text-align: center;
   margin: 0;
   letter-spacing: 1.5px;
@@ -89,26 +85,27 @@ const FooterContent = styled.div`
 
 const Logo = styled.img`
   height: auto;
-  width: 120px;
+  width: 80px;
 `;
 
 const BrandHeading = styled.h3`
   font-size: 20px;
-  font-family: 'Cinzel', serif;
   margin: 0;
-  font-weight: 400;
-  color: #fff;
+  font-weight: 200;
+  color: ${props => props.theme.black};
+  text-transform: uppercase;
 `;
 
 const BrandHeading2 = styled.h3`
   font-size: 24px;
   margin: 0;
-  font-weight: 700;
-  color: #fff;
+  font-weight: 200;
+  color: ${props => props.theme.black};
+  text-transform: uppercase;
 `;
 
 const EmailLink = styled.a`
-  color: #fff;
+  color: ${props => props.theme.black};
 `;
 
 export default Footer;

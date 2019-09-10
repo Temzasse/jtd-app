@@ -4,7 +4,6 @@ import Image from 'gatsby-image';
 import { Link } from 'gatsby';
 import { FiArrowRight } from 'react-icons/fi';
 
-import logoImg from '../images/logo_white_black_bg.png';
 import theme from '../theme';
 import { getArrData, media } from '../utils';
 import Page from '../components/Page';
@@ -24,15 +23,13 @@ export default ({ data }) => {
 
       <PageHeader img={data.headerImg.childImageSharp.fluid}>
         <HeaderWrapper>
-          <Logo src={logoImg} />
-          <Gutter dir="vertical" amount={24} />
           <SecondaryHeading>Interior design</SecondaryHeading>
-          <Gutter dir="vertical" amount={8} />
+          <Gutter dir="vertical" />
           <MainHeading>Johanna Taskula</MainHeading>
         </HeaderWrapper>
       </PageHeader>
 
-      <Section bg="#fff" h="auto" padd={0}>
+      <Section bg="#fff" h="auto" padd="60px 60px 0px 60px">
         <Layout dir={{ sm: 'col' }}>
           <Layout.Box flex="1">
             <IntoText>
@@ -96,7 +93,7 @@ export default ({ data }) => {
         </Layout>
       </Section>
 
-      <Section bg={theme.primary[300]}>
+      <Section bg={theme.white}>
         <SectionHeading color={theme.black}>Galleria</SectionHeading>
         <SubHeading>Viimeisimmät julkaisut</SubHeading>
 
@@ -117,33 +114,22 @@ export default ({ data }) => {
 
 const HeaderWrapper = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   position: absolute;
+  padding: 120px;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
 `;
 
-const Logo = styled.img`
-  width: 200px;
-  height: 200px;
-
-  ${media.sm`
-    width: 120px;
-    height: 120px;
-  `}
-`;
-
 const MainHeading = styled.h1`
-  font-family: 'Raleway', sans-serif;
   font-size: 60px;
-  font-weight: 900;
+  text-transform: uppercase;
+  font-weight: 200;
   margin: 0;
-  background-color: #fff;
-  padding: 8px 24px;
   text-align: center;
 
   ${media.sm`
@@ -152,13 +138,10 @@ const MainHeading = styled.h1`
 `;
 
 const SecondaryHeading = styled.h2`
-  font-family: 'Cinzel', serif;
   font-size: 32px;
-  font-weight: 700;
+  font-weight: 200;
   margin: 0;
   text-transform: uppercase;
-  background-color: #fff;
-  padding: 4px 16px;
 
   ${media.sm`
     font-size: 18px;
@@ -167,7 +150,7 @@ const SecondaryHeading = styled.h2`
 
 const SectionHeading = styled.h3`
   font-size: 40px;
-  font-weight: 900;
+  font-weight: 200;
   color: ${props => props.color};
   margin: 0;
 `;
@@ -175,7 +158,7 @@ const SectionHeading = styled.h3`
 const Profile = styled(Image)`
   width: 250px;
   height: auto;
-  margin-bottom: -120px;
+  margin-bottom: -10px;
   text-align: center;
 `;
 
@@ -199,18 +182,22 @@ const IntoText = styled.p`
 `;
 
 const Card = styled.div`
-  border-radius: 8px;
+  border-radius: 4px;
   background-color: ${props => props.theme.primary[300]};
   box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.4);
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
 `;
 
 const CardImage = styled(Image)`
-  border-top-right-radius: 8px;
-  border-top-left-radius: 8px;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
 `;
 
 const CardContent = styled.div`
   padding: 16px;
+  flex: 1;
 `;
 
 const CardTitle = styled.div`
@@ -280,7 +267,7 @@ const GalleryLink = styled(Link)`
 
 const GalleryPreview = styled(Image)`
   height: 300px;
-  border-radius: 4px;
+  border-radius: 2px;
 
   :hover {
     filter: brightness(90%);
@@ -298,15 +285,15 @@ const GalleryItemTitle = styled.h2`
 
 export const query = graphql`
   query {
-    headerImg: file(relativePath: { eq: "landing_page_header.jpg" }) {
+    headerImg: file(relativePath: { eq: "landing_page_header1.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1000, maxHeight: 500) {
+        fluid(maxWidth: 3000) {
           ...GatsbyImageSharpFluid
         }
       }
     }
 
-    profileImg: file(relativePath: { eq: "profile-img.png" }) {
+    profileImg: file(relativePath: { eq: "profile.png" }) {
       childImageSharp {
         fixed(width: 250) {
           ...GatsbyImageSharpFixed
@@ -316,7 +303,7 @@ export const query = graphql`
 
     cardImg1: file(relativePath: { eq: "services_1.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 800, maxHeight: 300) {
+        fluid(maxWidth: 800, maxHeight: 400) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -324,7 +311,7 @@ export const query = graphql`
 
     cardImg2: file(relativePath: { eq: "services_2.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 800, maxHeight: 300) {
+        fluid(maxWidth: 800, maxHeight: 400) {
           ...GatsbyImageSharpFluid
         }
       }

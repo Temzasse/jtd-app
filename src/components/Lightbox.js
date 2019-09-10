@@ -114,12 +114,12 @@ const LightboxImage = styled(Image)`
   height: ${HEIGHT}vh;
   animation: ${scaleAnim} 150ms ease-in forwards;
   pointer-events: none;
-  border-radius: 12px;
+  border-radius: 2px;
   box-shadow: 0px 6px 32px rgba(0, 0, 0, 0.5);
   will-change: transform, opacity;
 
   & img {
-    border-radius: 12px;
+    border-radius: 2px;
   }
 `;
 

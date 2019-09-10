@@ -7,7 +7,7 @@ import { keyframes } from '@emotion/core';
 const PageHeader = ({ img, title, children }) => {
   return (
     <Wrapper>
-      <HeaderImage fluid={img} />
+      <HeaderImage fluid={img} objectPosition="0% 50%" />
 
       {title && (
         <TitleWrapper>
@@ -26,7 +26,6 @@ const PageHeader = ({ img, title, children }) => {
 const Wrapper = styled.div`
   width: 100%;
   position: relative;
-  margin-bottom: 10px;
 `;
 
 const TitleWrapper = styled.div`
@@ -72,10 +71,11 @@ const Title = styled.div`
 const TitleText = styled.h1`
   margin: 0;
   font-size: 60px;
-  font-weight: 900;
+  font-weight: 200;
   color: ${props => props.theme.black};
   opacity: 0;
   animation: ${textRevealAnim} 200ms ease-in-out forwards 300ms;
+  font-family: 'Montserrat', sans-serif;
 
   ${media.sm`
     font-size: 48px;

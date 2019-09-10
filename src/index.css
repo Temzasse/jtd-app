@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Cinzel:400,700|Raleway:400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,400,700|Raleway:400,500,700,900&display=swap');
 
 html,
 body {
@@ -12,14 +12,16 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
-/* font-family: 'Cinzel', serif; */
-
 img {
   max-width: 100%;
 }
 
 button {
   font-family: 'Raleway', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Montserrat', sans-serif;
 }
 
 * {

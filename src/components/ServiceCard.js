@@ -96,8 +96,9 @@ const CardType = styled.div`
   }
 `;
 
-const CardTitle = styled.strong`
+const CardTitle = styled.span`
   font-size: 20px;
+  font-weight: 500;
   color: ${props => props.theme.black};
   padding-left: 36px;
 

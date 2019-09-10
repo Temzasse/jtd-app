@@ -18,7 +18,7 @@ const Wrapper = styled.section`
 
 const Content = styled.div`
   flex: 1;
-  padding: ${props => props.padd || 60}px;
+  padding: ${props => props.padd || '60px'};
   max-width: 900px;
   margin: 0 auto;
   display: flex;

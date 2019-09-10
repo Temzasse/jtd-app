@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { MdInfo } from 'react-icons/md';
+import { MdInfoOutline } from 'react-icons/md';
 
 import Page from '../components/Page';
 import SEO from '../components/SEO';
@@ -13,7 +13,6 @@ import Section from '../components/Section';
 import ServiceCard from '../components/ServiceCard';
 import Gutter from '../components/Gutter';
 import theme from '../theme';
-import { dotGrid } from '../utils';
 
 const Services = ({ data }) => (
   <Page>
@@ -25,7 +24,9 @@ const Services = ({ data }) => (
       <Heading as="h2" id="yksityisille">
         PALVELUT YKSITYISILLE
       </Heading>
-      <SubHeading>Jotta kotisi tekisi sinut onnelliseksi</SubHeading>
+      <SubHeading color={theme.grey[500]}>
+        Jotta kotisi tekisi sinut onnelliseksi
+      </SubHeading>
 
       <p>
         Tarjoan sisustus -ja tilasuunnittelua yksityiskoteihin, uudiskohteisiin
@@ -35,7 +36,7 @@ const Services = ({ data }) => (
         ja konsultointi.
       </p>
 
-      <br />
+      <Gutter dir="vertical" amount={40} />
 
       <ServiceCard
         iconType="coffee"
@@ -114,11 +115,9 @@ const Services = ({ data }) => (
 
     <InfoSection bg={theme.primary[200]} h="auto">
       <Layout align="center">
-        <MdInfo size={28} color={theme.primary[800]} />
+        <MdInfoOutline size={24} color={theme.primary[800]} />
         <Gutter amount={8} />
-        <Heading as="h3" color={theme.primary[800]}>
-          Huomaathan nämä asiat
-        </Heading>
+        <InfoHeading>Huomaathan nämä asiat</InfoHeading>
       </Layout>
 
       <Gutter dir="vertical" amount={24} />
@@ -144,13 +143,11 @@ const Services = ({ data }) => (
       </Text>
     </InfoSection>
 
-    <br />
-
     <Section>
       <Heading as="h2" id="yrityksille">
         PALVELUT YRITYKSILLE
       </Heading>
-      <SubHeading>
+      <SubHeading color={theme.grey[500]}>
         HYVIN SUUNNITELTU TILA EROTTUU MUISTA, ON PUOLEENSAVETÄVÄ JA JÄTTÄÄ
         MUISTIJÄLJEN
       </SubHeading>
@@ -215,11 +212,9 @@ const Services = ({ data }) => (
 
     <InfoSection bg={theme.primary[200]} h="auto">
       <Layout align="center">
-        <MdInfo size={28} color={theme.primary[800]} />
+        <MdInfoOutline size={24} color={theme.primary[800]} />
         <Gutter amount={8} />
-        <Heading as="h3" color={theme.primary[800]}>
-          Yhteistyö muiden toimijoiden kanssa
-        </Heading>
+        <InfoHeading>Yhteistyö muiden toimijoiden kanssa</InfoHeading>
       </Layout>
 
       <Gutter dir="vertical" amount={24} />
@@ -237,6 +232,12 @@ const Services = ({ data }) => (
 );
 
 const InfoSection = styled(Section)``;
+
+const InfoHeading = styled.span`
+  font-size: 20px;
+  font-weight: 500;
+  color: ${props => props.theme.primary[800]};
+`;
 
 export const query = graphql`
   query {
