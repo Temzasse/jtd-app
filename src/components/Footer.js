@@ -2,11 +2,9 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import logoImg from '../images/logo_white_black_bg.png';
-import theme from '../theme';
 import Layout from './Layout';
 import Text from './Text';
 import Gutter from './Gutter';
-import Heading from './Heading';
 
 const Footer = () => {
   return (
