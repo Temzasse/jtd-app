@@ -13,6 +13,7 @@ import Gutter from '../components/Gutter';
 import PageHeader from '../components/PageHeader';
 import Section from '../components/Section';
 import SubHeading from '../components/SubHeading';
+import Text from '../components/Text';
 
 export default ({ data }) => {
   const galleryItems = getArrData(data);
@@ -29,26 +30,32 @@ export default ({ data }) => {
         </HeaderWrapper>
       </PageHeader>
 
-      <Section bg="#fff" h="auto" padd="60px 60px 0px 60px">
-        <Layout dir={{ sm: 'col' }}>
+      <Section bg="#fff" h="auto">
+        <ProfileWrapper>
           <Layout.Box flex="1">
-            <IntoText>
-              Kodin pitäisi olla paikka, missä tunnet iloa ja onnea. Kodissa
-              vallitseva tunnelma heijastaa siellä asuvien ihmisten elämää ja
-              rakkautta. Persoonalliset yksityiskohdat, rakkaat esineet ja
-              mielenkiintoiset ratkaisut tekevät kodista sielukkaan ja asujiensa
-              näköisen.
-            </IntoText>
+            <Slogan>
+              Teen työtäni intohimolla. Kuuntelen asiakasta ja pyrin
+              suunnittelemaan visuaalisesti kauniita ja eheitä kokonaisuuksia
+              persoonallisia ratkaisuja unohtamatta.
+            </Slogan>
+            {/* <SloganBy>
+              - <strong>Johanna Taskula</strong>, Sisustussuunnittelija
+            </SloganBy> */}
           </Layout.Box>
-          <Layout.Box flex="none">
+
+          <Gutter sm={{ dir: 'vertical', amount: 32 }} />
+
+          <Layout.Box
+            flex="none"
+            style={{ display: 'flex', alignItems: 'flex-end' }}
+          >
             <Profile fixed={data.profileImg.childImageSharp.fixed} />
           </Layout.Box>
-        </Layout>
+        </ProfileWrapper>
       </Section>
 
       <Section bg={theme.black}>
         <SectionHeading color={theme.white}>Palvelut</SectionHeading>
-        <SubHeading color={theme.white}>Ratkaisut sisustuspulmiisi</SubHeading>
 
         <Gutter dir="vertical" amount={40} />
 
@@ -63,7 +70,7 @@ export default ({ data }) => {
                   uudiskohteisiin ja vapaa-ajan asuntoihin asiakkaan toiveet
                   huomioiden. Kotien suunnittelussa on tärkeintä, että
                   lopputuloksena on persoonallinen, juuri sinulle suunniteltu
-                  koti. Palveluihin kuuluu sisustussuunnittelu ja konsultointi.
+                  koti.
                 </p>
               </CardContent>
               <CardFooter>
@@ -162,9 +169,20 @@ const Profile = styled(Image)`
   text-align: center;
 `;
 
-const IntoText = styled.p`
+const ProfileWrapper = styled.div`
+  display: flex;
+  margin-bottom: -60px;
+
+  ${media.sm`
+    margin-bottom: -32px;
+    flex-direction: column;
+    align-items: center;
+  `}
+`;
+
+const Slogan = styled.p`
   font-size: 20px;
-  line-height: 1.6;
+  line-height: 1.7;
   font-style: italic;
   padding: 0px 40px;
   position: relative;
@@ -179,6 +197,19 @@ const IntoText = styled.p`
     line-height: 0;
     color: ${props => props.theme.primary['400']};
   }
+
+  ${media.sm`
+    padding: 0px 16px;
+    font-size: 18px;
+  `}
+`;
+
+const SloganBy = styled.p`
+  font-size: 16px;
+  padding: 0px 40px;
+  text-align: right;
+  color: ${props => props.theme.primary[700]};
+  margin: 0;
 `;
 
 const Card = styled.div`

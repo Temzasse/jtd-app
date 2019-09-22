@@ -29,15 +29,15 @@ const Navbar = () => {
         onMouseEnter={() => setDropmenuOpen(true)}
         onMouseLeave={() => setDropmenuOpen(false)}
       >
-        Palvelut
+        Sisustussuunnittelu
         {dropmenuOpen && (
           <Dropmenu>
             <DropmenuContent>
               <DropmenuItem to="/palvelut#yksityisille">
-                Yksityisille
+                Palvelut yksityisille
               </DropmenuItem>
               <DropmenuItem to="/palvelut#yrityksille">
-                Yrityksille
+                Palvelut yrityksille
               </DropmenuItem>
             </DropmenuContent>
           </Dropmenu>
@@ -116,7 +116,7 @@ const Dropmenu = styled.div`
   left: 50%;
   right: 0px;
   padding-top: ${ARROW_HEIGHT}px;
-  width: 200px;
+  width: 250px;
   transform: translateX(-50%);
 `;
 
@@ -149,6 +149,7 @@ const DropmenuItem = styled(Link)`
   font-weight: 400;
   border: none;
   text-align: center;
+  text-shadow: none;
 
   &:hover {
     font-weight: 700;

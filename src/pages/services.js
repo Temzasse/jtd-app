@@ -57,7 +57,7 @@ const Services = ({ data }) => (
         items={[
           'Suunnittelun tavoitteena on löytää toimivat ja kauniit ratkaisut',
           'Käydään läpi tilojen funktionalisuutta, tilajakoa ja mahdollista tilojen järkevöittämistä/rakenteellisia ratkaisuja',
-          'Tuotoksena tilasuunnitelma mittakaavassa sisältäen kalustelayoutin',
+          'Suunnittelutyössäni käytän 3D-suunnitteluohjelmaa, joka auttaa asiakasta tilojen visualisoinnissa',
         ]}
       />
 
@@ -69,8 +69,7 @@ const Services = ({ data }) => (
         items={[
           'Valaistuksen merkitystä ei voi koskaan korostaa liikaa, valaistus voi muuttaa tilan tyylin ja tunnelman',
           'Valaistussuunnitelma tehdään suunnittelukokonaisuus huomioiden',
-          'Valaisimien valinta',
-          'Tuotoksena valaisinpistekuva ja tiedot valituista valaisimista',
+          'Valaistussuunnitelmaan kuuluu valaisimien valinta ja valaisinpositioluettelo pohjakuvineen',
         ]}
       />
 
@@ -81,8 +80,8 @@ const Services = ({ data }) => (
         title="Pintamateriaalit ja värit"
         items={[
           'Suunnittelun tavoitteena on haluttu tunnelma, joka muodostuu pintamateriaalien ja värien harmonisesta kokonaisuudesta',
-          'Jotain muuta tähän myös',
-          'Jotain muuta tähän myös',
+          'Pintamateriaalien valinnassa huomiodaan tilojen käyttötarkoitus. Tavoitteena on löytää kauniit ja kestävät pinnat',
+          'Pintojen visuaalisen ilmeen lisäksi on myös tärkeää, miltä pinnat tuntuvat. Erilaiset pintastruktuurit jättävät mieleen muistijälkiä',
         ]}
       />
 
@@ -90,11 +89,13 @@ const Services = ({ data }) => (
 
       <ServiceCard
         iconType="furniture"
-        title="Kiintokalusteet / Irtokalusteet"
+        title="Kiintokalusteet / Irtokalustesuunnitelma"
         items={[
           'Kiintokalustesuunnitelmat kalustetoimittajia varten tai yhteistyössä kalustetoimittajien kanssa',
           'Valitaan kotinne tyyliin sopivat irtokalusteet ja irtovalaisimet jo olemassa olevat kalusteet huomioiden',
-          'Ehkä jotain muuta tähän myös',
+          'Kiintokalusteiden avulla voidaan korostaa kodin tyyliä tai ne voivat olla aikaa kestävät neutraalit raamit kodille',
+          'Irtokalusteilla luodaan kotiin persoonallista ilmettä',
+          'Suunnittelen tarvittaessa mittatilauskalusteet yhteistyössä puusepän kanssa',
         ]}
       />
 
@@ -104,9 +105,10 @@ const Services = ({ data }) => (
         iconType="textile"
         title="Tekstiilit"
         items={[
-          'Tekstiilisuunnitelma sisältää matot, verhot, päiväpeitteet, tyynyt jne.',
+          'Tekstiilisuunnitelma sisältää matot, verhot, päiväpeitteet ja tyynyt',
           'Tekstiilisuunnitelma kulkee käsikädessä värisuunnitelman kanssa',
-          'Ehkä jotain muuta tähän myös',
+          'Tekstiileillä viimeistellään kodin värimaailma ja tyyli',
+          'Tekstiilit luovat kotiin kodikkuutta ja niillä on myös keskeinen merkitys kodin akustiikassa',
         ]}
       />
     </Section>
@@ -153,9 +155,9 @@ const Services = ({ data }) => (
       </SubHeading>
 
       <p>
-        Toteutan majoitustilojen, opetustilojen ja toimitilojen tila -ja
-        sisustussunnittelua. Erikoisosaamisenani ovat edustus -ja majoitustilat,
-        kuten boutique-hotellit, sekä opetustilat.
+        Toteutan toimitilojen, toimisto- ja opetustilojen sekä edustustilojen
+        tila- ja sisustussuunnittelua. Erikoisosaamisenani on majoitus- ja
+        edustustilojen sunnittelu.
       </p>
 
       <p>

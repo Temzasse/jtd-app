@@ -11,6 +11,7 @@ import Page from '../components/Page';
 import SEO from '../components/SEO';
 import PageHeader from '../components/PageHeader';
 import Lightbox from '../components/Lightbox';
+import Gutter from '../components/Gutter';
 
 export default function GalleryItemTemplate({ data }) {
   const [lightboxOpen, setLightboxOpen] = React.useState(false);
@@ -47,7 +48,13 @@ export default function GalleryItemTemplate({ data }) {
 
       <ContentContainer>
         <Content>
-          <p>{galleryItem.description}</p>
+          <GalleryDescription>
+            <hr />
+            <span>{galleryItem.description}</span>
+            <hr />
+          </GalleryDescription>
+
+          <Gutter dir="vertical" />
 
           <GalleryImages>
             {rows.map(row => {
@@ -89,6 +96,44 @@ const ContentContainer = styled.div`
 
 const Content = styled.div`
   padding: 16px;
+`;
+
+const GalleryDescription = styled.p`
+  display: flex;
+  align-items: center;
+  margin: 0px;
+  padding: 32px 0px;
+
+  & > hr {
+    flex: 1;
+    height: 2px;
+    border: none;
+    background-color: ${props => props.theme.primary[300]};
+    border-radius: 2px;
+  }
+
+  & > span {
+    max-width: 700px;
+    padding: 16px;
+  }
+
+  & > span::first-letter {
+    background-color: ${props => props.theme.primary[300]};
+    color: ${props => props.theme.primary[700]};
+    padding: 0px 4px;
+    margin-right: 4px;
+    font-size: 48px;
+    float: left;
+    line-height: 1;
+  }
+
+  ${media.sm`
+    padding: 0px;
+
+    & > hr {
+     display: none; 
+    }
+  `}
 `;
 
 const GalleryImages = styled.div``;

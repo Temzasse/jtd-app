@@ -2,9 +2,9 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { media } from '../utils';
 
-const Section = ({ children, h, bg, padd, ...rest }) => (
+const Section = ({ children, h, bg, ...rest }) => (
   <Wrapper h={h} bg={bg} {...rest}>
-    <Content padd={padd}>{children}</Content>
+    <Content>{children}</Content>
   </Wrapper>
 );
 
@@ -18,14 +18,14 @@ const Wrapper = styled.section`
 
 const Content = styled.div`
   flex: 1;
-  padding: ${props => props.padd || '60px'};
+  padding: 60px;
   max-width: 900px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
 
   ${media.sm`
-    padding: 32px 24px;
+    padding: 32px 16px;
   `}
 `;
 

@@ -3,10 +3,7 @@ templateKey: galleryItem
 title: 'Uudisrakennus, Sarfvik'
 date: 2019-09-02T17:05:56.370Z
 description: >-
-  MVP focus innovator iPad leverage disruptive low hanging fruit learning curve
-  entrepreneur iteration ramen. Business plan non-disclosure agreement
-  business-to-consumer stealth. Buyer conversion low hanging fruit holy grail.
-  Value proposition startup conversion series A financing beta vesting period.
+  Tämä koti on unelmien koti. Koti suunniteltiin toimivaksi ylellisin ratkaisuin. Perheelle tärkeitä toiveita olivat vanhempien oma siipi ylellisine kylpyhuoneineen, nuorisolle omat tilat alakertaan, leffahuone ja koti-spa. Materiaaleiksi valittiin korkealaatuisia tuotteita ja harmonista kokonaisuutta rikottiin sopivasti rouheilla yksityiskohdilla.
 previewImage: /assets/dev/Uudisrakennus_Sarfvik_header.jpg
 galleryImages:
   - /assets/dev/Uudisrakennus_Sarfvik_1.jpg
@@ -20,4 +17,3 @@ galleryImages:
   - /assets/dev/Uudisrakennus_Sarfvik_9.jpg
   - /assets/dev/Uudisrakennus_Sarfvik_10.jpg
 ---
-

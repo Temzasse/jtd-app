@@ -3,10 +3,7 @@ templateKey: galleryItem
 title: Omakotitalo, Espoo
 date: 2019-01-16T17:05:56.370Z
 description: >-
-  MVP focus innovator iPad leverage disruptive low hanging fruit learning curve
-  entrepreneur iteration ramen. Business plan non-disclosure agreement
-  business-to-consumer stealth. Buyer conversion low hanging fruit holy grail.
-  Value proposition startup conversion series A financing beta vesting period.
+  Tämä kivitalo valmistui Espoon Lippajärvelle. Perhe toivoi sisustukseen ruskean eri sävyjä ja luksusta yhdistettynä hieman rouheampiin materiaaleihin. Suunnittelin tähän kotiin pinnat, kiintokalusteet, irtokalusteet ja tekstiilit.
 previewImage: /assets/dev/Omakotitalo_Espoo_2.jpg
 galleryImages:
   - /assets/dev/Omakotitalo_Espoo_1.jpg
