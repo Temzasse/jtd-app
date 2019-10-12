@@ -16,15 +16,15 @@ import Gutter from '../components/Gutter';
 export default function GalleryItemTemplate({ data }) {
   const [lightboxOpen, setLightboxOpen] = React.useState(false);
   const [lightboxImage, setLightboxImage] = React.useState(null);
-
   const galleryItem = getData(data);
+
   const images = orderBy(
-    galleryItem.galleryImages.map((image, index) => ({
+    galleryItem.galleryImages.map(image => ({
       ...image.childImageSharp.fluid,
-      index,
     })),
     'aspectRatio'
-  );
+  ).map((image, index) => ({ ...image, index }));
+
   const rows = chunk(images, 2);
 
   function openLightbox(imageIndex) {
