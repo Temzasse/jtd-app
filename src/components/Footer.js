@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { FiInstagram, FiFacebook } from 'react-icons/fi';
 
 import logoImg from '../images/logo_white_black_bg.png';
 import Layout from './Layout';
@@ -49,6 +50,25 @@ const Footer = () => {
               <Logo src={logoImg} />
             </Layout>
           </Layout.Box>
+        </Layout>
+
+        <Gutter dir="vertical" amount={32} />
+
+        <Layout justify="center">
+          <SocialLink
+            href="https://www.instagram.com/johannataskula/?hl=fi"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FiInstagram />
+          </SocialLink>
+          <SocialLink
+            href="https://www.facebook.com/Interior-Design-Johanna-Taskula-344118646068633/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FiFacebook />
+          </SocialLink>
         </Layout>
       </FooterContent>
     </Wrapper>
@@ -104,6 +124,26 @@ const BrandHeading2 = styled.h3`
 
 const EmailLink = styled.a`
   color: ${props => props.theme.black};
+`;
+
+const SocialLink = styled.a`
+  text-decoration: none;
+  font-size: 40px;
+  color: ${props => props.theme.primary[700]};
+  background-color: ${props => props.theme.primary[200]};
+  height: 56px;
+  width: 56px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 16px;
+  transition: transform 100ms ease;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.1);
+  }
 `;
 
 export default Footer;
