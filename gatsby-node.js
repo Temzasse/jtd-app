@@ -51,17 +51,6 @@ exports.createPages = ({ actions, graphql }) => {
         context: { id },
       });
     });
-
-    // Create sub-pages
-    // createPage({
-    //   path: '/palvelut/yksityisille',
-    //   component: path.resolve('src/templates/publicServices.js'),
-    // });
-
-    // createPage({
-    //   path: '/palvelut/yrityksille',
-    //   component: path.resolve('src/templates/privateServices.js'),
-    // });
   });
 };
 
@@ -84,8 +73,10 @@ const replacePath = path => {
       return '/galleria';
     case '/contact/':
       return '/ota-yhteytta';
-    case '/services/':
-      return '/palvelut';
+    case '/private-services/':
+      return '/palvelut-yrityksille';
+    case '/public-services/':
+      return '/palvelut-yksityisille';
     default:
       return path;
   }

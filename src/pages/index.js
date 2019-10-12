@@ -13,7 +13,6 @@ import Gutter from '../components/Gutter';
 import PageHeader from '../components/PageHeader';
 import Section from '../components/Section';
 import SubHeading from '../components/SubHeading';
-import Text from '../components/Text';
 
 export default ({ data }) => {
   const galleryItems = getArrData(data);
@@ -38,9 +37,6 @@ export default ({ data }) => {
               suunnittelemaan visuaalisesti kauniita ja eheitä kokonaisuuksia
               persoonallisia ratkaisuja unohtamatta.
             </Slogan>
-            {/* <SloganBy>
-              - <strong>Johanna Taskula</strong>, Sisustussuunnittelija
-            </SloganBy> */}
           </Layout.Box>
 
           <Gutter sm={{ dir: 'vertical', amount: 32 }} />
@@ -74,7 +70,7 @@ export default ({ data }) => {
                 </p>
               </CardContent>
               <CardFooter>
-                <ReadMoreButton to="/palvelut#yksityisille" />
+                <ReadMoreButton to="/palvelut-yksityisille" />
               </CardFooter>
             </Card>
           </Layout.Box>
@@ -93,7 +89,7 @@ export default ({ data }) => {
                 </p>
               </CardContent>
               <CardFooter>
-                <ReadMoreButton to="/palvelut#yrityksille" />
+                <ReadMoreButton to="/palvelut-yrityksille" />
               </CardFooter>
             </Card>
           </Layout.Box>
@@ -202,14 +198,6 @@ const Slogan = styled.p`
     padding: 0px 16px;
     font-size: 18px;
   `}
-`;
-
-const SloganBy = styled.p`
-  font-size: 16px;
-  padding: 0px 40px;
-  text-align: right;
-  color: ${props => props.theme.primary[700]};
-  margin: 0;
 `;
 
 const Card = styled.div`

@@ -2,7 +2,7 @@ import React from 'react';
 import { navigate } from 'gatsby';
 import styled from '@emotion/styled';
 import { FiMenu } from 'react-icons/fi';
-import { IoIosImages, IoIosHelpCircle, IoMdRose } from 'react-icons/io';
+import { IoIosImages, IoIosHelpCircle, IoMdRose, IoIosBriefcase } from 'react-icons/io';
 
 import logoImg from '../images/logo_black.png';
 import { mobileOnly, IS_BROWSER } from '../utils';
@@ -34,18 +34,17 @@ const Drawer = () => {
           Etusivu
         </MenuItem>
 
-        <MenuItem onClick={() => navigateDelayed('/palvelut')}>
+        <MenuItem onClick={() => navigateDelayed('/palvelut-yksityisille')}>
           <IoMdRose size={30} />
           <Gutter />
-          Palvelut
+          Palvelut yksityisille
         </MenuItem>
 
-        <SubMenuItem onClick={() => navigateDelayed('/palvelut#yksityisille')}>
-          Yksityisille
-        </SubMenuItem>
-        <SubMenuItem onClick={() => navigateDelayed('/palvelut#yrityksille')}>
-          Yrityksille
-        </SubMenuItem>
+        <MenuItem onClick={() => navigateDelayed('/palvelut-yrityksille')}>
+          <IoIosBriefcase size={30} />
+          <Gutter />
+          Palvelut yrityksille
+        </MenuItem>
 
         <MenuItem onClick={() => navigateDelayed('/galleria')}>
           <IoIosImages size={30} />
@@ -98,16 +97,6 @@ const MenuItem = styled.div`
   padding: 16px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #eee;
-
-  &:active {
-    background-color: #ddd;
-  }
-`;
-
-const SubMenuItem = styled.div`
-  padding: 16px 16px 16px 24px;
-  background-color: #f7f7f7;
   border-bottom: 1px solid #eee;
 
   &:active {
