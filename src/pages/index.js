@@ -83,9 +83,11 @@ export default ({ data }) => {
               <CardContent>
                 <CardTitle>Yrityksille</CardTitle>
                 <p>
-                  Toteutan majoitustilojen, opetustilojen ja toimitilojen tila
-                  -ja sisustussunnittelua. Erikoisosaamisenani ovat edustus -ja
-                  majoitustilat, kuten boutique-hotellit, sekä opetustilat.
+                  Toteutan toimitilojen, toimisto- ja opetustilojen sekä
+                  edustustilojen tila- ja sisustussuunnittelua.
+                  Erikoisosaamisenani on majoitus- ja edustustilojen suunnittelu.
+                  Suunnittelun tavoitteena on luoda yritykselle viihtyisät
+                  tilat, jossa sekä asiakkaat että työntekijät viihtyvät.
                 </p>
               </CardContent>
               <CardFooter>

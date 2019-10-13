@@ -32,7 +32,7 @@ const PrivateServicesTemplate = ({ data }) => (
       <p>
         Toteutan toimitilojen, toimisto- ja opetustilojen sekä edustustilojen
         tila- ja sisustussuunnittelua. Erikoisosaamisenani on majoitus- ja
-        edustustilojen sunnittelu.
+        edustustilojen suunnittelu.
       </p>
 
       <p>

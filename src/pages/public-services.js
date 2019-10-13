@@ -32,8 +32,7 @@ const PublicServicesTemplate = ({ data }) => (
         Tarjoan sisustus -ja tilasuunnittelua yksityiskoteihin, uudiskohteisiin
         ja vapaa-ajan asuntoihin asiakkaan toiveet huomioiden. Kotien
         suunnittelussa on tärkeintä, että lopputuloksena on persoonallinen,
-        juuri sinulle suunniteltu koti. Palveluihin kuuluu sisustussuunnittelu
-        ja konsultointi.
+        juuri sinulle suunniteltu koti.
       </p>
 
       <Gutter dir="vertical" amount={40} />
