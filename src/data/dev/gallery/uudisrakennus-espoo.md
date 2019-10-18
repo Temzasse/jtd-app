@@ -13,4 +13,3 @@ galleryImages:
   - /assets/dev/Uudisrakennus_1_Espoo_7.jpg
   - /assets/dev/Uudisrakennus_1_Espoo_8.jpg
 ---
-

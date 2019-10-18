@@ -10,7 +10,6 @@ import PageHeader from '../components/PageHeader';
 
 const Gallery = ({ data }) => {
   const galleryItems = getArrData(data);
-  console.log('> galleryItems', galleryItems);
 
   return (
     <Page>
