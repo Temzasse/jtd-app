@@ -16,9 +16,9 @@ const NETLIFY_CMS_PATH = IS_DEV
 
 module.exports = {
   siteMetadata: {
-    title: 'Sisustussuunnittelja Johanna Syvälahti-Taskula',
+    title: 'Sisustussuunnittelija Johanna Taskula',
     description:
-      'Teen sisustussuunnittelua koteihin pääasiassa pääkäupunkiseudulla tavoitteena löytää toimivat ja kauniit ratkaisut, jotka miellyttävät sinua.',
+      'Teen sisustussuunnittelua koteihin ja julkisiin tiloihin pääasiassa pääkaupunkiseudulla. Tavoitteeni on löytää toimivia ja visuaalisesti kauniita ratkaisuja, jotka miellyttävät asiakastani.',
   },
   plugins: [
     // Define the location for images produced by netlify-cms
