@@ -67,6 +67,19 @@ module.exports = {
       },
     },
 
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Sisustussuunnittelija Johanna Taskula',
+        short_name: 'JTD',
+        start_url: '/',
+        background_color: '#e2dfd3',
+        theme_color: '#7c7251',
+        display: 'standalone',
+        icon: `src/images/logo_white_black_bg.png`,
+      },
+    },
+
     'gatsby-plugin-emotion',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-remove-console',
