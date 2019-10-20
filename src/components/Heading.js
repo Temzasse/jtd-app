@@ -12,6 +12,7 @@ const Heading = styled.h1`
   margin: 0;
   text-align: ${props => props.align || 'left'};
   color: ${props => props.color || props.theme.black};
+  text-transform: ${props => props.uppercase ? 'uppercase' : 'none'};
 
   ${props => media.sm`
     font-size: ${mobileSizes[props.as] || mobileSizes.h1}px;

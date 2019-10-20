@@ -21,10 +21,11 @@ const PublicServicesTemplate = ({ data }) => (
     <PageHeader img={data.headerImg.childImageSharp.fluid} title="Palvelut yksityisille" />
 
     <Section>
-      <Heading as="h2" id="yksityisille">
-        PALVELUT YKSITYISILLE
+      <Heading as="h2" id="yksityisille" uppercase>
+        Palvelut yksityisille
       </Heading>
-      <SubHeading color={theme.grey[500]}>
+
+      <SubHeading color={theme.primary[700]} uppercase>
         Jotta kotisi tekisi sinut onnelliseksi
       </SubHeading>
 
@@ -156,7 +157,7 @@ const InfoHeading = styled.span`
 
 export const query = graphql`
   query {
-    headerImg: file(relativePath: { eq: "services_header.jpg" }) {
+    headerImg: file(relativePath: { eq: "public_services_header.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1000, maxHeight: 500) {
           ...GatsbyImageSharpFluid

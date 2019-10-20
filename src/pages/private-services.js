@@ -24,9 +24,9 @@ const PrivateServicesTemplate = ({ data }) => (
       <Heading as="h2" id="yrityksille">
         PALVELUT YRITYKSILLE
       </Heading>
-      <SubHeading color={theme.grey[500]}>
-        HYVIN SUUNNITELTU TILA EROTTUU MUISTA, ON PUOLEENSAVETÄVÄ JA JÄTTÄÄ
-        MUISTIJÄLJEN
+      
+      <SubHeading color={theme.primary[700]} uppercase>
+        Hyvin suunniteltu tila erottuu muista, on puoleensavetävä ja jättää muistijäljen
       </SubHeading>
 
       <p>
@@ -118,7 +118,7 @@ const InfoHeading = styled.span`
 
 export const query = graphql`
   query {
-    headerImg: file(relativePath: { eq: "services_header.jpg" }) {
+    headerImg: file(relativePath: { eq: "private_services_header.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1000, maxHeight: 500) {
           ...GatsbyImageSharpFluid
