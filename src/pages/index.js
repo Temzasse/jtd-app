@@ -51,7 +51,7 @@ export default ({ data }) => {
       </Section>
 
       <Section bg={theme.black}>
-        <SectionHeading color={theme.white}>Palvelut</SectionHeading>
+        <SectionHeading color={theme.white}>Sisustussuunnittelu</SectionHeading>
 
         <Gutter dir="vertical" amount={40} />
 
@@ -60,7 +60,7 @@ export default ({ data }) => {
             <Card>
               <CardImage fluid={data.cardImg1.childImageSharp.fluid} />
               <CardContent>
-                <CardTitle>Yksityisille</CardTitle>
+                <CardTitle>Palvelut yksityisille</CardTitle>
                 <p>
                   Tarjoan sisustus -ja tilasuunnittelua yksityiskoteihin,
                   uudiskohteisiin ja vapaa-ajan asuntoihin asiakkaan toiveet
@@ -81,7 +81,7 @@ export default ({ data }) => {
             <Card>
               <CardImage fluid={data.cardImg2.childImageSharp.fluid} />
               <CardContent>
-                <CardTitle>Yrityksille</CardTitle>
+                <CardTitle>Palvelut yrityksille</CardTitle>
                 <p>
                   Toteutan toimitilojen, toimisto- ja opetustilojen sekä
                   edustustilojen tila- ja sisustussuunnittelua.
