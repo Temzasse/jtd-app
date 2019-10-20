@@ -6,7 +6,7 @@ const SubHeading = styled.h4`
   text-transform: uppercase;
   color: ${props => props.color || props.theme.black};
   margin: 8px 0px;
-  text-transform: ${props => props.uppercase ? 'uppercase' : 'none'};
+  line-height: 1.5;
 `;
 
 export default SubHeading;

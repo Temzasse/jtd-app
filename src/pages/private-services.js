@@ -21,11 +21,11 @@ const PrivateServicesTemplate = ({ data }) => (
     <PageHeader img={data.headerImg.childImageSharp.fluid} title="Palvelut yrityksille" />
 
     <Section>
-      <Heading as="h2" id="yrityksille">
-        PALVELUT YRITYKSILLE
+      <Heading as="h2" id="yrityksille" uppercase>
+        Palvelut yrityksille
       </Heading>
       
-      <SubHeading color={theme.primary[700]} uppercase>
+      <SubHeading color={theme.primary[700]}>
         Hyvin suunniteltu tila erottuu muista, on puoleensavetävä ja jättää muistijäljen
       </SubHeading>
 

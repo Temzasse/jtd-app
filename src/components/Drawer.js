@@ -2,7 +2,13 @@ import React from 'react';
 import { navigate } from 'gatsby';
 import styled from '@emotion/styled';
 import { FiMenu } from 'react-icons/fi';
-import { IoIosImages, IoIosHelpCircle, IoMdRose, IoIosBriefcase } from 'react-icons/io';
+
+import {
+  IoIosImages,
+  IoIosHelpCircle,
+  IoMdRose,
+  IoIosBriefcase,
+} from 'react-icons/io';
 
 import logoImg from '../images/logo_black.png';
 import { mobileOnly, IS_BROWSER } from '../utils';
@@ -22,7 +28,7 @@ const Drawer = () => {
   return (
     <>
       <MenuButton onClick={() => setOpen(true)}>
-        <FiMenu size={20} />
+        <FiMenu size={24} />
       </MenuButton>
 
       <Backdrop isVisible={isOpen} onClick={() => setOpen(false)} />
@@ -64,6 +70,7 @@ const Drawer = () => {
 
 const Backdrop = styled.div`
   position: fixed;
+  z-index: 2;
   top: 0;
   bottom: 0;
   left: 0;
@@ -78,6 +85,7 @@ const Backdrop = styled.div`
 
 const Menu = styled.div`
   position: fixed;
+  z-index: 3;
   top: 0;
   bottom: 0;
   left: 0;
@@ -94,26 +102,28 @@ const Menu = styled.div`
 `;
 
 const MenuItem = styled.div`
+  font-size: 18px;
   padding: 16px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid ${props => props.theme.grey[200]};
 
   &:active {
-    background-color: #ddd;
+    background-color: ${props => props.theme.primary[200]};
   }
 `;
 
 const MenuButton = styled.button`
   position: fixed;
-  top: 16px;
-  left: 16px;
+  z-index: 1;
+  top: 8px;
+  left: 8px;
   border: none;
   padding: 0;
   background-color: #fff;
   border-radius: 50%;
-  height: 40px;
-  width: 40px;
+  height: 48px;
+  width: 48px;
   display: flex;
   justify-content: center;
   align-items: center;

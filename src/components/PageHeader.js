@@ -78,7 +78,7 @@ const TitleText = styled.h1`
   font-family: 'Montserrat', sans-serif;
 
   ${media.sm`
-    font-size: 48px;
+    font-size: 40px;
   `}
 `;
 

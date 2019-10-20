@@ -85,9 +85,10 @@ export default ({ data }) => {
                 <p>
                   Toteutan toimitilojen, toimisto- ja opetustilojen sekä
                   edustustilojen tila- ja sisustussuunnittelua.
-                  Erikoisosaamisenani on majoitus- ja edustustilojen suunnittelu.
-                  Suunnittelun tavoitteena on luoda yritykselle viihtyisät
-                  tilat, jossa sekä asiakkaat että työntekijät viihtyvät.
+                  Erikoisosaamisenani on majoitus- ja edustustilojen
+                  suunnittelu. Suunnittelun tavoitteena on luoda yritykselle
+                  viihtyisät tilat, jossa sekä asiakkaat että työntekijät
+                  viihtyvät.
                 </p>
               </CardContent>
               <CardFooter>
@@ -128,6 +129,10 @@ const HeaderWrapper = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
+
+  ${media.sm`
+    padding: 32px;
+  `}
 `;
 
 const MainHeading = styled.h1`
@@ -138,7 +143,8 @@ const MainHeading = styled.h1`
   text-align: center;
 
   ${media.sm`
-    font-size: 32px;
+    font-size: 40px;
+    text-align: left;
   `}
 `;
 
@@ -149,7 +155,8 @@ const SecondaryHeading = styled.h2`
   text-transform: uppercase;
 
   ${media.sm`
-    font-size: 18px;
+    font-size: 20px;
+    text-align: left;
   `}
 `;
 
@@ -158,6 +165,10 @@ const SectionHeading = styled.h3`
   font-weight: 200;
   color: ${props => props.color};
   margin: 0;
+
+  ${media.sm`
+    font-size: 24px;
+  `}
 `;
 
 const Profile = styled(Image)`
@@ -197,7 +208,7 @@ const Slogan = styled.p`
   }
 
   ${media.sm`
-    padding: 0px 16px;
+    padding: 16px;
     font-size: 18px;
   `}
 `;

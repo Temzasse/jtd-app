@@ -124,7 +124,7 @@ const CardListItem = styled.li`
   `}
 `;
 
-const CardListItemBullet = styled.li`
+const CardListItemBullet = styled.span`
   display: inline-flex;
   align-items: center;
   justify-content: center;

@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { FiInstagram, FiFacebook } from 'react-icons/fi';
 
 import logoImg from '../images/logo_white_black_bg.png';
+import { media } from '../utils';
 import Layout from './Layout';
 import Text from './Text';
 import Gutter from './Gutter';
@@ -13,7 +14,7 @@ const Footer = () => {
       <FooterContent>
         <FooterHeading id="ota-yhteytta">Ota yhteyttä</FooterHeading>
 
-        <Gutter dir="vertical" amount={60} />
+        <Gutter dir="vertical" amount={60} sm={{ amount: 32 }} />
 
         <Layout dir={{ sm: 'col' }} align={{ sm: 'center' }}>
           <Layout.Box>
@@ -25,21 +26,21 @@ const Footer = () => {
                 Sisustussuunnittelija
               </Text>
               <Text weight={500} size={18}>
-                044-2370181
+                <MediaLink href="tel:044-2370181">044-2370181</MediaLink>
               </Text>
               <Text weight={500} size={18}>
-                <EmailLink
+                <MediaLink
                   href="mailto:info@johannataskula.fi"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   info@johannataskula.fi
-                </EmailLink>
+                </MediaLink>
               </Text>
             </Layout>
           </Layout.Box>
 
-          <Gutter sm={{ dir: 'vertical', amount: 32 }} />
+          <Gutter sm={{ dir: 'vertical', amount: 40 }} />
 
           <Layout.Box>
             <Layout dir="col" align="center" justify="center">
@@ -52,7 +53,7 @@ const Footer = () => {
           </Layout.Box>
         </Layout>
 
-        <Gutter dir="vertical" amount={32} />
+        <Gutter dir="vertical" amount={40} />
 
         <Layout justify="center">
           <SocialLink
@@ -93,6 +94,10 @@ const FooterHeading = styled.h4`
   text-align: center;
   margin: 0;
   letter-spacing: 1.5px;
+
+  ${media.sm`
+    font-size: 32px;
+  `}
 `;
 
 const FooterContent = styled.div`
@@ -122,7 +127,7 @@ const BrandHeading2 = styled.h3`
   text-transform: uppercase;
 `;
 
-const EmailLink = styled.a`
+const MediaLink = styled.a`
   color: ${props => props.theme.black};
 `;
 

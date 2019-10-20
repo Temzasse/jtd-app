@@ -25,7 +25,7 @@ const PublicServicesTemplate = ({ data }) => (
         Palvelut yksityisille
       </Heading>
 
-      <SubHeading color={theme.primary[700]} uppercase>
+      <SubHeading color={theme.primary[700]}>
         Jotta kotisi tekisi sinut onnelliseksi
       </SubHeading>
 
