@@ -3,15 +3,23 @@ import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 
 import logoImg from '../images/logo_black.png';
-import { desktopOnly } from '../utils';
+import { desktopOnly, isTouchDevice, noop, useOnClickOutside } from '../utils';
 
 const Navbar = () => {
+  const dropmenuRef = React.useRef();
   const [dropmenuOpen, setDropmenuOpen] = React.useState(false);
+  const touchEnabled = isTouchDevice();
   const activeStyle = { fontWeight: 700 };
 
-  function disableLinkClick(event) {
+  const handleDropmenuMouseEnter = () => setDropmenuOpen(true);
+  const handleDropmenuMouseLeave = () => setDropmenuOpen(false);
+
+  const handleDropmenuClick = event => {
     event.preventDefault();
-  }
+    if (touchEnabled) setDropmenuOpen(x => !x); // handle tablets
+  };
+
+  useOnClickOutside(dropmenuRef, () => setDropmenuOpen(false));
 
   return (
     <Nav>
@@ -21,16 +29,17 @@ const Navbar = () => {
         </LogoWrapper>
       </NavLink>
 
-      <div style={{ flex: 1 }} />
+      <Flexer />
 
       <NavLink
         to="/palvelut"
+        ref={dropmenuRef}
         partiallyActive
         disableUnderline
         activeStyle={activeStyle}
-        onMouseEnter={() => setDropmenuOpen(true)}
-        onMouseLeave={() => setDropmenuOpen(false)}
-        onClick={disableLinkClick}
+        onClick={handleDropmenuClick}
+        onMouseEnter={touchEnabled ? noop : handleDropmenuMouseEnter}
+        onMouseLeave={touchEnabled ? noop : handleDropmenuMouseLeave}
       >
         Sisustussuunnittelu
         {dropmenuOpen && (
@@ -73,6 +82,10 @@ const Nav = styled.nav`
   background-color: rgba(0, 0, 0, 0.05);
   z-index: 1;
   ${desktopOnly}
+`;
+
+const Flexer = styled.div`
+  flex: 1;
 `;
 
 const LogoWrapper = styled.div`

@@ -1,5 +1,52 @@
+import React from 'react';
 import { css } from '@emotion/core';
 import theme from './theme';
+
+export const IS_BROWSER = typeof window !== 'undefined';
+
+export const noop = () => {};
+
+// Source: https://stackoverflow.com/questions/4817029/whats-the-best-way-to-detect-a-touch-screen-device-using-javascript/40207469
+export const isTouchDevice = () => {
+  if (!IS_BROWSER) return false;
+
+  const prefixes = ' -webkit- -moz- -o- -ms- '.split(' ');
+  const mq = query => window.matchMedia(query).matches;
+
+  if (
+    'ontouchstart' in window ||
+    (window.DocumentTouch && document instanceof window.DocumentTouch)
+  ) {
+    return true;
+  }
+
+  const query = ['(', prefixes.join('touch-enabled),('), 'heartz', ')'].join(
+    ''
+  );
+
+  return mq(query);
+};
+
+// Source: https://usehooks.com/useOnClickOutside/
+export const useOnClickOutside = (ref, handler) => {
+  React.useEffect(() => {
+    const listener = event => {
+      if (!ref.current || ref.current.contains(event.target)) {
+        return;
+      }
+
+      handler(event);
+    };
+
+    document.addEventListener('mousedown', listener);
+    document.addEventListener('touchstart', listener);
+
+    return () => {
+      document.removeEventListener('mousedown', listener);
+      document.removeEventListener('touchstart', listener);
+    };
+  }, [ref, handler]);
+};
 
 export const getArrData = data => {
   return data.allMarkdownRemark.edges.map(({ node }) => ({
@@ -34,8 +81,6 @@ export const dotGrid = (color = theme.primary[300]) => css`
   background-size: 30px 30px;
   background-image: radial-gradient(${color} 5%, transparent 0);
 `;
-
-export const IS_BROWSER = typeof window !== 'undefined';
 
 export const BREAKPOINTS = {
   sm: 700,
