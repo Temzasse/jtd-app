@@ -10,12 +10,13 @@ import PageHeader from '../components/PageHeader';
 
 const Gallery = ({ data }) => {
   const galleryItems = getArrData(data);
+  const headerImage = data.headerImg.childImageSharp.fluid;
 
   return (
     <Page>
-      <SEO />
+      <SEO titlePrefix="Galleria" image={headerImage.src} slug="/galleria" />
 
-      <PageHeader img={data.headerImg.childImageSharp.fluid} title="Galleria" />
+      <PageHeader img={headerImage} title="Galleria" />
 
       <GalleryWrapper>
         <GalleryItems>

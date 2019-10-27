@@ -17,6 +17,7 @@ export default function GalleryItemTemplate({ data }) {
   const [lightboxOpen, setLightboxOpen] = React.useState(false);
   const [lightboxImage, setLightboxImage] = React.useState(null);
   const galleryItem = getData(data);
+  const headerImage = galleryItem.previewImage.childImageSharp.fluid;
 
   const images = orderBy(
     galleryItem.galleryImages.map(image => ({
@@ -39,12 +40,13 @@ export default function GalleryItemTemplate({ data }) {
 
   return (
     <Page>
-      <SEO />
-
-      <PageHeader
-        title={galleryItem.title}
-        img={galleryItem.previewImage.childImageSharp.fluid}
+      <SEO
+        titlePrefix={galleryItem.title}
+        image={headerImage.src}
+        slug={galleryItem.slug}
       />
+
+      <PageHeader title={galleryItem.title} img={headerImage} />
 
       <ContentContainer>
         <Content>
@@ -171,6 +173,9 @@ export const pageQuery = graphql`
   query GalleryItemByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
+      fields {
+        slug
+      }
       frontmatter {
         title
         description

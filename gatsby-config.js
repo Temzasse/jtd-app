@@ -14,11 +14,14 @@ const NETLIFY_CMS_PATH = IS_DEV
   ? path.join(__dirname, 'src', 'cms', 'cms.dev.js')
   : path.join(__dirname, 'src', 'cms', 'cms.prod.js');
 
+// TODO: https://www.gatsbyjs.org/packages/gatsby-plugin-robots-txt/#netlify
+
 module.exports = {
   siteMetadata: {
     title: 'Sisustussuunnittelija Johanna Taskula',
-    description:
-      'Teen sisustussuunnittelua koteihin ja julkisiin tiloihin pääasiassa pääkaupunkiseudulla. Tavoitteeni on löytää toimivia ja visuaalisesti kauniita ratkaisuja, jotka miellyttävät asiakastani.',
+    description: 'Teen sisustussuunnittelua koteihin ja julkisiin tiloihin pääasiassa pääkaupunkiseudulla. Tavoitteeni on löytää toimivia ja visuaalisesti kauniita ratkaisuja, jotka miellyttävät asiakastani.', // prettier-ignore
+    siteUrl: 'https://www.johannataskula.fi',
+    image: 'https://www.johannataskula.fi/images/johanna_taskula.jpg',
   },
   plugins: [
     // Define the location for images produced by netlify-cms

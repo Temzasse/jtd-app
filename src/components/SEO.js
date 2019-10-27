@@ -3,58 +3,66 @@ import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
-const SEO = ({ title, description }) => (
+const SEO = props => (
   <StaticQuery
     query={query}
-    render={({
-      site: {
-        siteMetadata: { defaultTitle, defaultDescription },
-      },
-    }) => {
-      const seo = {
-        title: title || defaultTitle,
-        description: description || defaultDescription,
-      };
+    render={({ site: { siteMetadata: seo } }) => {
+      const title = props.titlePrefix
+        ? `${props.titlePrefix} · ${seo.title}`
+        : seo.title;
+
+      const description = props.description || seo.description;
+      const url = props.slug ? `${seo.siteUrl}${props.slug}` : seo.siteUrl;
+      const image = props.image ? `${seo.siteUrl}${props.image}` : seo.image;
 
       return (
-        <Helmet title={seo.title}>
-          <meta name="description" content={seo.description} />
+        <Helmet>
+          {/* General tags */}
+          <title>{title}</title>
+          <meta name="description" content={description} />
+          <link rel="canonical" href={url} />
 
-          {seo.title && <meta property="og:title" content={seo.title} />}
+          {/* OpenGraph tags */}
+          <meta property="og:url" content={url} />
+          <meta property="og:title" content={title} />
+          <meta property="og:description" content={description} />
+          <meta property="og:image" content={image} />
 
-          {seo.description && (
-            <meta property="og:description" content={seo.description} />
-          )}
-
-          {seo.title && <meta name="twitter:title" content={seo.title} />}
-
-          {seo.description && (
-            <meta name="twitter:description" content={seo.description} />
-          )}
+          {/* Twitter Card tags */}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content={title} />
+          <meta name="twitter:description" content={description} />
+          <meta name="twitter:image" content={image} />
         </Helmet>
       );
     }}
   />
 );
 
-export default SEO;
-
 SEO.propTypes = {
-  title: PropTypes.string,
+  titlePrefix: PropTypes.string,
   description: PropTypes.string,
+  image: PropTypes.string,
+  slug: PropTypes.string,
 };
 
 SEO.defaultProps = {
-  title: null,
+  titlePrefix: null,
   description: null,
+  image: null,
+  slug: null,
 };
+
+export default SEO;
 
 const query = graphql`
   query SEO {
     site {
       siteMetadata {
-        defaultTitle: title
-        defaultDescription: description
+        title
+        description
+        siteUrl
+        image
       }
     }
   }
