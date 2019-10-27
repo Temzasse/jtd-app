@@ -20,7 +20,7 @@ const PrivateServicesTemplate = ({ data }) => {
   return (
     <Page>
       <SEO
-        titlePrefix="Palvelut yrityksille"
+        title="Palvelut yrityksille"
         image={headerImage.src}
         slug="/palvelut-yrityksille"
       />

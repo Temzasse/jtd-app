@@ -21,7 +21,12 @@ module.exports = {
     title: 'Sisustussuunnittelija Johanna Taskula',
     description: 'Teen sisustussuunnittelua koteihin ja julkisiin tiloihin pääasiassa pääkaupunkiseudulla. Tavoitteeni on löytää toimivia ja visuaalisesti kauniita ratkaisuja, jotka miellyttävät asiakastani.', // prettier-ignore
     siteUrl: 'https://www.johannataskula.fi',
-    image: 'https://www.johannataskula.fi/images/johanna_taskula.jpg',
+    image: 'https://www.johannataskula.fi/static/johanna_taskula.jpg',
+    logo: 'https://www.johannataskula.fi/static/logo.png',
+    legalName: 'Interior Design Johanna Taskula',
+    email: 'info@johannataskula.fi',
+    telephone: '+358442370181',
+    address: 'Kalastajankuja 8 D\nEspoo, 02230\nFinland',
   },
   plugins: [
     // Define the location for images produced by netlify-cms

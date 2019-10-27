@@ -14,7 +14,7 @@ const Gallery = ({ data }) => {
 
   return (
     <Page>
-      <SEO titlePrefix="Galleria" image={headerImage.src} slug="/galleria" />
+      <SEO title="Galleria" image={headerImage.src} slug="/galleria" />
 
       <PageHeader img={headerImage} title="Galleria" />
 

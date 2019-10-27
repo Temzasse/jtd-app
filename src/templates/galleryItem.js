@@ -41,7 +41,8 @@ export default function GalleryItemTemplate({ data }) {
   return (
     <Page>
       <SEO
-        titlePrefix={galleryItem.title}
+        isGalleryItem
+        title={galleryItem.title}
         image={headerImage.src}
         slug={galleryItem.slug}
       />

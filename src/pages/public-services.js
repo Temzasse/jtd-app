@@ -20,7 +20,7 @@ const PublicServicesTemplate = ({ data }) => {
   return (
     <Page>
       <SEO
-        titlePrefix="Palvelut yksityisille"
+        title="Palvelut yksityisille"
         image={headerImage.src}
         slug="/palvelut-yksityisille"
       />
