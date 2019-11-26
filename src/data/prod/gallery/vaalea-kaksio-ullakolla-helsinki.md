@@ -6,8 +6,8 @@ description: >-
   Suunnittelin kuuteen ullakkoasuntoon pintamateriaalit ja kiintokalusteet. Jokaisesta asunnosta haluttiin erilainen. Tässä esimerkki valkoisesta asunnosta, jossa kuitenkin mukana persoonallisia yksityiskohtia.
 previewImage: /assets/dev/Vaalea_kaksio_ullakolla_Helsinki_header.jpg
 galleryImages:
-  - /assets/dev/Vaalea_kaksio_ullakolla_Helsinki_1.jpg
-  - /assets/dev/Vaalea_kaksio_ullakolla_Helsinki_2.jpg
-  - /assets/dev/Vaalea_kaksio_ullakolla_Helsinki_3.jpg
-  - /assets/dev/Vaalea_kaksio_ullakolla_Helsinki_4.jpg
+  - /assets/prod/Vaalea_kaksio_ullakolla_Helsinki_1.jpg
+  - /assets/prod/Vaalea_kaksio_ullakolla_Helsinki_2.jpg
+  - /assets/prod/Vaalea_kaksio_ullakolla_Helsinki_3.jpg
+  - /assets/prod/Vaalea_kaksio_ullakolla_Helsinki_4.jpg
 ---
