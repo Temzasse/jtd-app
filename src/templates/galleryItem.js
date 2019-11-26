@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import styled from '@emotion/styled';
 import chunk from 'lodash.chunk';
 import sum from 'lodash.sum';
-import orderBy from 'lodash.orderby';
+import groupBy from 'lodash.groupby';
 import Image from 'gatsby-image';
 
 import { media, getData } from '../utils';
@@ -19,13 +19,16 @@ export default function GalleryItemTemplate({ data }) {
   const galleryItem = getData(data);
   const headerImage = galleryItem.previewImage.childImageSharp.fluid;
 
-  const images = orderBy(
-    galleryItem.galleryImages.map(image => ({
-      ...image.childImageSharp.fluid,
-    })),
-    'aspectRatio'
-  ).map((image, index) => ({ ...image, index }));
+  const indexedImages = galleryItem.galleryImages.map((image, index) => ({
+    ...image.childImageSharp.fluid,
+    index,
+  }));
 
+  const { 1: vertical = [], 2: horizontal = [] } = groupBy(indexedImages, x =>
+    Math.ceil(x.aspectRatio)
+  );
+
+  const images = [...vertical, ...horizontal];
   const rows = chunk(images, 2);
 
   function openLightbox(imageIndex) {
