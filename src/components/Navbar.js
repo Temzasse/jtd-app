@@ -31,17 +31,22 @@ const Navbar = () => {
 
       <Flexer />
 
-      <NavLink
-        to="/palvelut"
+      <DropmenuWrapper
         ref={dropmenuRef}
-        partiallyActive
-        disableUnderline
-        activeStyle={activeStyle}
-        onClick={handleDropmenuClick}
         onMouseEnter={touchEnabled ? noop : handleDropmenuMouseEnter}
         onMouseLeave={touchEnabled ? noop : handleDropmenuMouseLeave}
       >
-        Sisustussuunnittelu
+        <NavLink
+          to="/palvelut"
+          partiallyActive
+          disableUnderline
+          activeStyle={activeStyle}
+          onClick={handleDropmenuClick}
+          style={{ margin: 0 }}
+        >
+          Sisustussuunnittelu
+        </NavLink>
+
         {dropmenuOpen && (
           <Dropmenu>
             <DropmenuContent>
@@ -54,7 +59,7 @@ const Navbar = () => {
             </DropmenuContent>
           </Dropmenu>
         )}
-      </NavLink>
+      </DropmenuWrapper>
 
       <NavLink to="/galleria" activeStyle={activeStyle}>
         Galleria
@@ -99,15 +104,14 @@ const LogoWrapper = styled.div`
 `;
 
 const NavLink = styled(Link)`
-  flex: none;
   margin: 0px 24px;
+  flex: none;
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
   color: ${props => props.theme.white};
-  position: relative;
   text-transform: uppercase;
   font-size: 14px;
   letter-spacing: 1.5px;
@@ -117,6 +121,11 @@ const NavLink = styled(Link)`
     text-decoration: ${props =>
       props.disableUnderline ? 'none' : 'underline'};
   }
+`;
+
+const DropmenuWrapper = styled.div`
+  margin: 0px 24px;
+  position: relative;
 `;
 
 const Logo = styled.img`
