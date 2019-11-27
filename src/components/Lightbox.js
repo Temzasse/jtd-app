@@ -8,34 +8,34 @@ const Lightbox = ({ images, selectedIndex, close }) => {
   const [index, setIndex] = React.useState(selectedIndex);
   const image = images[index];
 
-  function next() {
+  const next = React.useCallback(() => {
     if (index === images.length - 1) {
       setIndex(0);
     } else {
       setIndex(i => i + 1);
     }
-  }
+  }, [index, images.length]);
 
-  function prev() {
+  const prev = React.useCallback(() => {
     if (index === 0) {
       setIndex(images.length - 1);
     } else {
       setIndex(i => i - 1);
     }
-  }
-
-  function handleKeyUp(event) {
-    event.preventDefault();
-    const { keyCode } = event;
-    if (keyCode === 37) prev(); // Left Arrow Key
-    if (keyCode === 39) next(); // Right Arrow Key
-    if (keyCode === 27) close(); // Escape key
-  }
+  }, [index, images.length]);
 
   React.useEffect(() => {
+    function handleKeyUp(event) {
+      event.preventDefault();
+      const { keyCode } = event;
+      if (keyCode === 37) prev(); // Left Arrow Key
+      if (keyCode === 39) next(); // Right Arrow Key
+      if (keyCode === 27) close(); // Escape key
+    }
+
     window.addEventListener('keyup', handleKeyUp, false);
     return () => window.removeEventListener('keyup', handleKeyUp, false);
-  }, [handleKeyUp]);
+  }, [close, next, prev]);
 
   return (
     <Wrapper>
