@@ -4,7 +4,7 @@ title: 'Willa Lumia, Rovaniemi'
 date: 2019-10-20T17:05:56.370Z
 description: >-
   Asiakkaan toiveena oli luoda Rovaniemelle uniikki, poikkeuksellisen tasokas lomahuvila. Majoituspalvelua tarjoava Willa Lumia rakennettiin upealle paikalle, Lapin luonnon keskelle, kauniin järven rannalle. Myös huvilan sisustuksessa pyrittiin huomioimaan ympäröivä luonto. Sisustusmateriaaleiksi valittiin puuta, kiveä, lasia ja luonnonläheisiä tekstiilejä kuten pellavaa. Toteutin Willa Lumian sisustussuunnittelun yhteistyössä Mari Tullilan, Versatile Design kanssa.
-previewImage: /assets/dev/Willa_Lumia_3.jpg
+previewImage: /assets/prod/Willa_Lumia_3.jpg
 galleryImages:
   - /assets/prod/Willa_Lumia_1.jpg
   - /assets/prod/Willa_Lumia_2.jpg

@@ -4,7 +4,7 @@ title: 'Ulkoiluvaateliike Paccanen, Oulu'
 date: 2019-10-19T17:05:56.370Z
 description: >-
   Paccanen on uusi ulkoiluvaatteiden erikoisliike Oulussa. Sain toimeksiannon suunnitella myymälään  sisustuksen yleisilmeen, pinnat, valaistuksen, myymäläkalusteet ja näyteikkunat. Lähdimme tavoittelemaan asiakkaan kanssa alppityylistä, viihtyisää sisustusta. Tätä fiilistä saatiin aikaan käyttämällä sisustuksessa puuta riittävästi, mutta ei liikaa. Valkoiset pinnat raikastavat myymälän ilmettä ja tuovat omalta osaltaan tehokkaasti värikkäitä tuotteita esiin. Valaistuksella korostetaan myytäviä tuotteita. Mittatilauksena teetetyt myymäläkalusteet suunniteltiin palvelemaan myyntiä. Näyteikkunat luovat asiakkaille mielleyhtymiä luontoon ja ulkoiluun.
-previewImage: /assets/dev/Paccanen_Oulu_header.jpg
+previewImage: /assets/prod/Paccanen_Oulu_header.jpg
 galleryImages:
   - /assets/prod/Paccanen_Oulu_1.jpg
   - /assets/prod/Paccanen_Oulu_2.jpg
