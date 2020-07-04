@@ -19,16 +19,19 @@ export default function GalleryItemTemplate({ data }) {
   const galleryItem = getData(data);
   const headerImage = galleryItem.previewImage.childImageSharp.fluid;
 
-  const indexedImages = galleryItem.galleryImages.map((image, index) => ({
+  const flattenImages = galleryItem.galleryImages.map(image => ({
     ...image.childImageSharp.fluid,
-    index,
   }));
 
-  const { 1: vertical = [], 2: horizontal = [] } = groupBy(indexedImages, x =>
+  const { 1: vertical = [], 2: horizontal = [] } = groupBy(flattenImages, x =>
     Math.ceil(x.aspectRatio)
   );
 
-  const images = [...vertical, ...horizontal];
+  const images = [...vertical, ...horizontal].map((image, index) => ({
+    ...image,
+    index,
+  }));
+
   const rows = chunk(images, 2);
 
   function openLightbox(imageIndex) {
