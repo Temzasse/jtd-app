@@ -2,7 +2,7 @@
   "name": "jtd-app",
   "private": true,
   "description": "Interior design static web page made with Gatsby and Netlify CMS",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "install:clean": "rm -rf node_modules && npm install",
