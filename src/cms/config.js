@@ -13,17 +13,17 @@ const prodBackend = {
   branch: 'master',
 };
 
-let config = {
+const config = {
   backend: IS_DEV ? devBackend : prodBackend,
 
-  media_folder: IS_DEV ? 'static/assets/dev' : 'static/assets/prod',
-  public_folder: IS_DEV ? '/assets/dev' : '/assets/prod',
+  media_folder: 'static/assets',
+  public_folder: '/assets',
 
   collections: [
     {
       name: 'gallery',
       label: 'Gallery',
-      folder: IS_DEV ? 'src/data/dev/gallery' : 'src/data/prod/gallery',
+      folder: 'src/data/gallery',
       create: true,
       slug: '{{slug}}', // based on title
       editor: {

@@ -101,7 +101,7 @@ export default ({ data }) => {
 
       <Section bg={theme.white}>
         <SectionHeading color={theme.black}>Galleria</SectionHeading>
-        <SubHeading>Viimeisimmät julkaisut</SubHeading>
+        <SubHeading>Nostoja kohteista</SubHeading>
 
         <Gutter dir="vertical" amount={40} />
 

@@ -1,15 +1,8 @@
 const path = require('path');
 
 const IS_DEV = process.env.NODE_ENV === 'development';
-
-const NETLIFY_CMS_ASSETS_DIR = IS_DEV
-  ? path.join(__dirname, 'static', 'assets', 'dev')
-  : path.join(__dirname, 'static', 'assets', 'prod');
-
-const MD_DATA_DIR = IS_DEV
-  ? path.join(__dirname, 'src', 'data', 'dev')
-  : path.join(__dirname, 'src', 'data', 'prod');
-
+const NETLIFY_CMS_ASSETS_DIR = path.join(__dirname, 'static', 'assets');
+const MD_DATA_DIR = path.join(__dirname, 'src', 'data');
 const NETLIFY_CMS_PATH = IS_DEV
   ? path.join(__dirname, 'src', 'cms', 'cms.dev.js')
   : path.join(__dirname, 'src', 'cms', 'cms.prod.js');
