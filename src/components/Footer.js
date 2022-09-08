@@ -26,6 +26,17 @@ const Footer = () => {
                 Sisustussuunnittelija
               </Text>
               <Text weight={500} size={18}>
+                <MediaLink
+                  href={encodeURI(
+                    'https://maps.google.com/?q=Armfeltintie 12 A 1, 00150 Helsinki'
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Armfeltintie 12 A 1, 00150 Helsinki
+                </MediaLink>
+              </Text>
+              <Text weight={500} size={18}>
                 <MediaLink href="tel:044-2370181">044-2370181</MediaLink>
               </Text>
               <Text weight={500} size={18}>
